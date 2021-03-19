@@ -37,8 +37,19 @@
       </div>
     </header>
 
-
-
+    <main class="main__body h-screen mt-10 md:mt-10 lg:mt-20 md:pb-52 ">
+      <div class="container mx-auto flex flex-col justify-center ">
+        <div class="main__title w-3/5 lg:w-5/12 xl:w-1/2 ml-4 xl:ml-0 mr-10  text-black text-5xl font-bold ">
+          <p class="main__title--text mt-28 md:mt-40 lg:mt-32 xl:mt-36 2xl:mt-64 text-4xl md:text-6xl leading-tight">
+            Haz realidad todos tus proyectos.
+          </p>
+        </div>
+        <div class="flex flex-col flex-shrink lg:ml-0 md:justify-start lg:pb-20">
+          <a class="btn btn--primary w-3/5 md:w-1/2 lg:w-2/5 mx-4 xl:mx-0 mt-8 xl:mt-14 px-4 py-6 lg:py-8 lg:text-xl text-center font-bold rounded-md text-sm"
+            href="#">Contrata a uno de nuestros expertos</a>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 
