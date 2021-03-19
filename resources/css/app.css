@@ -65,6 +65,12 @@
 
     --url-image: url("/img/bg-main-1.png");
     --url-search-box-image: url("/img/search-image.jpg");
+    --url-image-pasos-item1: url("/img/busco_paso1.png");
+    --url-image-pasos-item2: url("/img/busco_paso2.png");
+    --url-image-pasos-item3: url("/img/busco_paso3.png");
+    --url-image-pasos-item4: url("/img/busco_paso4.png");
+    --url-image-pasos-item5: url("/img/experto_paso5.png");
+    --url-image-pasos-item6: url("/img/experto_paso6.png");
 
     @media screen and (min-width: 768px) {
         --width-card__card--body: 70%;
@@ -565,4 +571,42 @@ hr:last-child {
 .tagRemoveSelected {
     background-color: red;
     color: white;
+}
+
+.pasos-item1 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item1);
+}
+
+.pasos-item2 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item2);
+}
+.pasos-item3 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item3);
+}
+.pasos-item4 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item4);
+}
+.pasos-item5 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item5);
+}
+.pasos-item6 {
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: var(--url-image-pasos-item6);
 }
