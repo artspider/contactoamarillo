@@ -14,8 +14,9 @@ class buttoncomponent extends Component
      *
      * @return void
      */
-    public function __construct($type = "primary", $alpine)
+    public function __construct($type = "primary", $alpine, $option="")
     {
+        $this->option = $option;
         if($type == "secondary"){
             $this->type = "2";
             $this->option= "option = 2";
@@ -26,7 +27,7 @@ class buttoncomponent extends Component
             $this->alpine = $alpine;
         }else{
             $this->type = $type;
-            $this->option= " ";
+            $this->option= "option = 1 ";
             $this->alpine = $alpine;
         }
     }
