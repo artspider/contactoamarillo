@@ -19,5 +19,22 @@ function menu() {
 }
 
 window.menu = menu;
+
+function educationListen() {
+  return {
+    isEditing: false,
+    openEdit: function openEdit() {
+      this.isEditing = true;
+    },
+    closeEdit: function closeEdit() {
+      this.isEditing = false;
+    },
+    deleteItem: function deleteItem(id) {
+      confirmAction(id);
+    }
+  };
+}
+
+window.educationListen = educationListen;
 /******/ })()
 ;
