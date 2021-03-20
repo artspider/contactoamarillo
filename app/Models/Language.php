@@ -12,6 +12,6 @@ class Language extends Model
 
     public function experts()
     {
-      return $this->belongsToMany('App\Models\expert');
+      return $this->belongsToMany('App\Models\Expert');
     }
 }

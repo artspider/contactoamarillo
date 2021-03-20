@@ -17,6 +17,6 @@ class Titulo extends Model
 
   public function expert()
   {
-    return $this->belongsTo('App\Models\expert');
+    return $this->belongsTo('App\Models\Expert');
   }
 }

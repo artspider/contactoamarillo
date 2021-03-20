@@ -15,12 +15,12 @@ class Order extends Model
 
     public function expert()
     {
-        return $this->belongsTo('App\Models\expert');
+        return $this->belongsTo('App\Models\Expert');
     }
 
     public function employer()
     {
-        return $this->belongsTo('App\Models\employer');
+        return $this->belongsTo('App\Models\Employer');
     }
 
     public function getDayNameAttribute(){

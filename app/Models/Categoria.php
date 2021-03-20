@@ -12,6 +12,6 @@ class Categoria extends Model
 
     public function subcategorias()
     {
-        return $this->hasMany('App\Models\subcategoria')->latest();
+        return $this->hasMany('App\Models\Subcategoria')->latest();
     }
 }

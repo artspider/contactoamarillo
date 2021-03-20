@@ -14,12 +14,12 @@ class Tag extends Model
 
     public function experts()
     {
-      return $this->belongsToMany('App\expert');
+      return $this->belongsToMany('App\Expert');
     }
 
     public function subcategoria()
     {
-      return $this->belongsToMany('App\Models\subcategoria');
+      return $this->belongsToMany('App\Models\Subcategoria');
     }
 
     public function scopeName($query, $name)

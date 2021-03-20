@@ -12,11 +12,11 @@ class Subcategoria extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Models\tag', 'subcategoria_tag')->withTimestamps()->orderBy('name');
+        return $this->belongsToMany('App\Models\Tag', 'Subcategoria_Tag')->withTimestamps()->orderBy('name');
     }
 
     public function categorias()
     {
-        return $this->belongsTo('App\Models\categoria');
+        return $this->belongsTo('App\Models\Categoria');
     }
 }

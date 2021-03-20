@@ -17,32 +17,32 @@ class Expert extends Model
 
   public function orders()
     {
-        return $this->hasMany('App\Models\order')->latest();
+        return $this->hasMany('App\Models\Order')->latest();
     }
 
     public function tags()
     {
-        return $this->belongsToMany('App\Models\tag', 'expert_tag')->withTimestamps()->orderBy('name');
+        return $this->belongsToMany('App\Models\Tag', 'expert_tag')->withTimestamps()->orderBy('name');
     }
 
     public function languages()
     {
-        return $this->belongsToMany('App\Models\language', 'expert_language')->orderBy('language');
+        return $this->belongsToMany('App\Models\Language', 'expert_language')->orderBy('language');
     }
 
     public function membersihps()
     {
-        return $this->hasOne('App\Models\membership');
+        return $this->hasOne('App\Models\Membership');
     }
 
     public function titulos()
     {
-      return $this->hasMany('App\Models\titulo');
+      return $this->hasMany('App\Models\Titulo');
     }
 
     public function trabajos()
     {
-      return $this->hasMany('App\Models\trabajo');
+      return $this->hasMany('App\Models\Trabajo');
     }
 
     public function users()
