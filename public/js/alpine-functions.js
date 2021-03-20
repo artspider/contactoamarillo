@@ -30,11 +30,21 @@ function educationListen() {
       this.isEditing = false;
     },
     deleteItem: function deleteItem(id) {
-      confirmAction(id);
+      confirmAction("eliminarcarrera", id);
     }
   };
 }
 
 window.educationListen = educationListen;
+
+function languageListen() {
+  return {
+    deleteItem: function deleteItem(id) {
+      confirmAction("refreshLanguage", id);
+    }
+  };
+}
+
+window.languageListen = languageListen;
 /******/ })()
 ;

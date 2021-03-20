@@ -24,8 +24,17 @@ function educationListen() {
             this.isEditing = false;
         },
         deleteItem: function (id) {
-            confirmAction(id);
+            confirmAction("eliminarcarrera", id);
         },
     };
 }
 window.educationListen = educationListen;
+
+function languageListen() {
+    return {
+        deleteItem: function (id) {
+            confirmAction("refreshLanguage", id);
+        },
+    };
+}
+window.languageListen = languageListen;

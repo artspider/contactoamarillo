@@ -3707,24 +3707,29 @@ var Toast = swal.mixin({
 });
 window.Toast = Toast;
 
-function confirmAction(action) {
+function confirmAction(toemit, key) {
   swal.fire({
     title: "¡Confirma!",
     text: "¿Deseas eliminar el elemento?",
     position: "top-end",
-    width: 270,
+    width: 300,
+    padding: ".7rem",
     showCancelButton: true,
     buttonsStyling: false,
+    headerStyling: false,
     confirmButtonText: "Sí",
     cancelButtonText: "No",
     customClass: {
-      confirmButton: "btn text-sm text-white bg-green-500 font-medium shadow-lg rounded-lg px-4 py-3 mr-4",
-      cancelButton: "btn text-sm text-white bg-red-500 font-medium shadow-lg rounded-lg px-4 py-3"
+      header: "text-base items-start pl-2 text-left font-semibold text-gray-700",
+      content: "text-xs pl-2 text-gray-500",
+      confirmButton: "btn w-2/5 text-xs text-white bg-green-500 font-medium shadow-lg rounded-lg px-4 py-3 mr-4",
+      cancelButton: "btn w-2/5 text-sm text-white bg-red-500 font-medium shadow-lg rounded-lg px-4 py-3"
     }
   }).then(function (result) {
     if (result.isConfirmed) {
-      console.log(action);
-      Livewire.emit("eliminarcarrera", action);
+      console.log(toemit);
+      console.log(key);
+      Livewire.emit(toemit, key);
       Toast.fire({
         title: "Elemento eliminado",
         icon: "success"
