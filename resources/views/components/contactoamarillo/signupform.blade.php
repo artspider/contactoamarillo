@@ -23,10 +23,16 @@
                         <input id="datatype" type="hidden" id="type" name="type" value="1">
                         <x-buttoncomponent type="primary" class="w-1/2 tracking-tight py-6 mr-2"
                             alpine="{ 'bg-black text-white': option==1, 'bg-main-yellow text-black': option==2 }">
+                            <x-slot name="option">
+                                option=1
+                            </x-slot>
                             Busco profesionista
                         </x-buttoncomponent>
                         <x-buttoncomponent type="secondary" class="w-1/2 tracking-tight py-6  mr-2"
                             alpine="{ 'bg-main-yellow text-black': option==1, 'bg-black text-white': option==2 }">
+                            <x-slot name="option">
+                                option=2
+                            </x-slot>
                             Soy un experto
                         </x-buttoncomponent>
                     </div>

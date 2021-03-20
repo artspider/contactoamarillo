@@ -8,26 +8,26 @@ class buttoncomponent extends Component
 {
     public $type;    
     public $alpine;
-    public $option;
+    /* public $option; */
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($type = "primary", $alpine, $option="")
+    public function __construct($type = "primary", $alpine)
     {
-        $this->option = $option;
+       
         if($type == "secondary"){
             $this->type = "2";
-            $this->option= "option = 2";
+            /* $this->option= "option = 2"; */
             $this->alpine = $alpine;            
         }else if($type == "primary"){
             $this->type = "1";
-            $this->option= "option = 1";
+            /* $this->option= "option = 1"; */
             $this->alpine = $alpine;
         }else{
             $this->type = $type;
-            $this->option= "option = 1 ";
+            /* $this->option= "option = 1 "; */
             $this->alpine = $alpine;
         }
     }
