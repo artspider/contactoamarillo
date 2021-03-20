@@ -1,4 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/sweetmessages.js": "/js/sweetmessages.js",
+    "/js/alpine-functions.js": "/js/alpine-functions.js",
+    "/js/mijs.js": "/js/mijs.js",
     "/css/app.css": "/css/app.css"
 }
