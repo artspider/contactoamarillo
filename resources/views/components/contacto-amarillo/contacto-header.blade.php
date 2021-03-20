@@ -6,4 +6,8 @@
         </x-contacto-amarillo.contacto-imgmenu>
     </div>
     <x-contacto-amarillo.contacto-logo />
+
+    <div x-show="isOpen()" x-on:click.away="close" class="fixed top-0 left-0 w-1/5 bg-black h-full">
+        {{$slot}}
+    </div>
 </header>
