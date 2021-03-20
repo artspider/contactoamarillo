@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class buttoncomponent extends Component
+class Buttoncomponent extends Component
 {
     public $type;    
     public $alpine;
