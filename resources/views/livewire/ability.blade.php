@@ -1,11 +1,33 @@
 <div>
+
     <div class="alpinefunction" x-data="abilityListen()">
         <section id="habildades"
-            class="profile__body max-w-7xl h-96 my-4 grid grid-cols-1 lg:grid-cols-8 gap-4 mx-auto sm:px-6 lg:px-8">
+            class="profile__body max-w-7xl  my-4 grid grid-cols-1 lg:grid-cols-8 gap-4 mx-auto sm:px-6 lg:px-8">
+            <article class="especializacion h-80 lg:col-span-6 text-sm lg:text-xl bg-white rounded-lg shadow-lg p-4">
+                <div class="flex items-center">
+                    <h2 class="mr-2">Área de especialidad</h2>
+                    <span class="text-base text-gray-600">(Máximo 3)</span>
+                </div>
+                <livewire:speciality />
+            </article>
+
+            <article
+                class="flex items-center  lg:col-span-2 lg:col-end-9 text-center  w-full max-h-96 bg-white rounded-lg shadow-lg p-4">
+                <div class="mx-auto">
+                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
+                        class="rounded-full h-32 w-32 object-cover mx-auto">
+
+                    <h2 class="text-2xl font-serif mt-4 mb-3">{{Auth::user()->name}}</h2>
+                    <p class="mb-1">Miembro desde {{Auth::user()->created_at->diffForHumans()}}</p>
+                    <p>{{Auth::user()->email}}</p>
+                </div>
+
+            </article>
+
             <article
                 class="habilidades__especialidad lg:col-span-6 text-sm lg:text-xl bg-white rounded-lg shadow-lg p-4">
 
-                <h2 class="text-xl font-serif mb-4">Especialización</h2>
+                <h2 class="text-xl font-serif mb-4">Habilidades</h2>
                 <label class="block text-sm text-gray-600" for="clasificacion">Categoria</label>
                 <select wire:model="CategoriaId"
                     class="w-2/3 focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-1 px-4 mb-1"
@@ -60,18 +82,7 @@
                 @endisset
 
             </article>
-            <article
-                class="flex items-center  lg:col-span-2 lg:col-end-9 text-center  w-full max-h-96 bg-white rounded-lg shadow-lg p-4">
-                <div class="mx-auto">
-                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
-                        class="rounded-full h-32 w-32 object-cover mx-auto">
 
-                    <h2 class="text-2xl font-serif mt-4 mb-3">{{Auth::user()->name}}</h2>
-                    <p class="mb-1">Miembro desde {{Auth::user()->created_at->diffForHumans()}}</p>
-                    <p>{{Auth::user()->email}}</p>
-                </div>
-
-            </article>
         </section>
     </div>
 </div>

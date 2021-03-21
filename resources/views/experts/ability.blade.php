@@ -5,6 +5,11 @@
         </h2>
     </x-slot>
 
+    <div class="alert alert-success">
+        {{ Session::forget("error")}}
+
+    </div>
+
     @if (session()->has('error'))
     <script>
         Toast.fire({
