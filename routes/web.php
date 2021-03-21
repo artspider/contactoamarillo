@@ -15,6 +15,10 @@ Route::get('/education', function () {
     return view('experts.education');
 })->middleware(['auth'])->name('education');
 
+Route::get('/ability', function () {
+    return view('experts.ability');
+})->middleware(['auth'])->name('ability');
+
 
 
 require __DIR__.'/auth.php';

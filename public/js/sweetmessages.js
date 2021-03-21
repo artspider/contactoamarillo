@@ -3716,7 +3716,6 @@ function confirmAction(toemit, key) {
     padding: ".7rem",
     showCancelButton: true,
     buttonsStyling: false,
-    headerStyling: false,
     confirmButtonText: "Sí",
     cancelButtonText: "No",
     customClass: {
