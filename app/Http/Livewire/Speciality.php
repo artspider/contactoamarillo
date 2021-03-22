@@ -21,10 +21,12 @@ class Speciality extends Component
     public $totalcat = 0;
 
     public function load()
-    {
+    {      
         
-        
-        $this->categorias = Categoria::all();
+    }
+    
+    public function mount()
+    {   $this->categorias = Categoria::all();
         $user = Auth::user();
         $expert = $user->usable;
         $this->expert_id = $expert->id;
@@ -33,16 +35,11 @@ class Speciality extends Component
             $this->totalcat = 0;
             $this->specialities = null;
         }else{
-            logger('con contenido');
+            logger('Se cargo especialidad: ');
+            logger($expert->especialidad);
             $this->specialities = explode(",",$expert->especialidad);
             $this->totalcat = count($this->specialities);
-            session()->flash('success', 'Se actualizaron tus datos');
-        }
-    }
-    
-    public function mount()
-    {
-        $this->load();             
+        }            
     }
     
     public function render()
@@ -52,12 +49,11 @@ class Speciality extends Component
         ]);
     }
 
-    public function updatedCategoriaId() {
-        session()->forget(['error', 'success']);
+    public function updatedCategoriaId() {  
         logger($this->totalcat);
         if($this->totalcat >= 3) {
             logger("MAs de 3");
-            session()->flash('error', 'Solo hasta 3 áreas de especialización');
+            $this->emit('totalcaterror','Hasta 3 Categorias solamente');
             $this->load();
         }else{
             logger("seleccionaste: ");
@@ -77,11 +73,21 @@ class Speciality extends Component
             } 
             $expert->especialidad = implode(",",$this->specialities);
             $expert->save();
-            $this->load();
+            $this->totalcat = count($this->specialities);
+            $this->emit('success','Se actualizaron tus datos');
         }
     }
 
-    public function hydrate(){
-        logger('en ele hidrate');
+    public function removeSelected($key)
+    {
+        logger('remove:');
+        logger($key);
+        unset($this->specialities[$key]);
+        $this->totalcat = count($this->specialities);
+        $expert = Expert::find($this->expert_id);
+        $expert->especialidad = implode(",",$this->specialities);
+        $expert->save();
+        $this->emit('success','Se actualizaron tus datos');
     }
+
 }

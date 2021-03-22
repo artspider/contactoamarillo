@@ -69,5 +69,29 @@ function abilityListen() {
 }
 
 window.abilityListen = abilityListen;
+
+function subareaListen() {
+  return {
+    tagId: null,
+    habilidades: true,
+    togleTagClass: function togleTagClass(key, event) {
+      console.log("en el togle tag class");
+      console.log(event);
+      var tag = document.getElementById(event.target.id);
+      console.log(tag);
+      tag.classList.toggle("tagSelected");
+      /* Livewire.emit("onemoreability", key); */
+    },
+    togleTagRemoveClass: function togleTagRemoveClass(key, event) {
+      console.log("en el remove tag class");
+      var tag = document.getElementById(event.target.id);
+      console.log(tag);
+      tag.classList.toggle("tagRemoveSelected");
+      Livewire.emit("onelessability", key);
+    }
+  };
+}
+
+window.subareaListen = subareaListen;
 /******/ })()
 ;

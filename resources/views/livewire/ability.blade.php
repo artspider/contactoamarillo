@@ -3,12 +3,25 @@
     <div class="alpinefunction" x-data="abilityListen()">
         <section id="habildades"
             class="profile__body max-w-7xl  my-4 grid grid-cols-1 lg:grid-cols-8 gap-4 mx-auto sm:px-6 lg:px-8">
-            <article class="especializacion h-80 lg:col-span-6 text-sm lg:text-xl bg-white rounded-lg shadow-lg p-4">
-                <div class="flex items-center">
-                    <h2 class="mr-2">Área de especialidad</h2>
-                    <span class="text-base text-gray-600">(Máximo 3)</span>
+            <article
+                class="especializacion flex flex-wrap  lg:col-span-6 text-sm lg:text-xl bg-white rounded-lg shadow-lg p-4">
+                <div class="w-1/2 mr-8">
+                    <div class="flex items-center mb-4">
+                        <h2 class="mr-2 ">Área de especialidad</h2>
+                        <span class="text-base text-gray-600">(Máximo 3)</span>
+                    </div>
+                    <livewire:speciality />
                 </div>
-                <livewire:speciality />
+                <div class="  w-1/3 ">
+                    <div>
+                        <div class="flex  items-center">
+                            <p class="mr-2">Subarea</p>
+                            <span class="text-base text-gray-600">(puedes selecionar varias)</span>
+                        </div>
+                        <livewire:speciality-block />
+                    </div>
+
+                </div>
             </article>
 
             <article
