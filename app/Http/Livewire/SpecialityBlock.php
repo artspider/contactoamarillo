@@ -85,6 +85,7 @@ class SpecialityBlock extends Component
 
     public function render()
     {
+        dd($this->subcategories);
         return view('livewire.speciality-block',[
             'subcategories' => $this->subcategories
         ]);
