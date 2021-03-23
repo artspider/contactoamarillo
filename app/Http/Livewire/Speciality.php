@@ -76,6 +76,7 @@ class Speciality extends Component
             $this->totalcat = count($this->specialities);
             $this->emit('success','Se actualizaron tus datos');
         }
+        $this->emit('refreshSubareaView');
     }
 
     public function removeSelected($key)
@@ -88,6 +89,7 @@ class Speciality extends Component
         $expert->especialidad = implode(",",$this->specialities);
         $expert->save();
         $this->emit('success','Se actualizaron tus datos');
+        $this->emit('refreshSubareaView');
     }
-
+    
 }

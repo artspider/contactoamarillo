@@ -30,6 +30,11 @@ class Expert extends Model
         return $this->belongsToMany('App\Models\Language', 'expert_language')->orderBy('language');
     }
 
+    public function subcategorias()
+    {
+        return $this->belongsToMany('App\Models\Subcategoria', 'expert_subarea')->withTimestamps()->orderBy('name');
+    }
+
     public function membersihps()
     {
         return $this->hasOne('App\Models\Membership');

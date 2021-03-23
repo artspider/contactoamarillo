@@ -5,25 +5,6 @@
         </h2>
     </x-slot>
 
-    @if (session()->has('error'))
-    <script>
-        Toast.fire({
-            icon: 'error',
-            title: "{{ session("error") }}"
-        }
-        )
-    </script>
-    @endif
-    @if (session()->has('success'))
-    <script>
-        Toast.fire({
-            icon: 'success',
-            title: "{{ session("success") }}"
-        }
-        )
-    </script>
-    @endif
-
     <div class="py-12">
         <livewire:ability />
     </div>

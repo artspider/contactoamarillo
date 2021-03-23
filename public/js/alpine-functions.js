@@ -20,6 +20,14 @@ function menu() {
 
 window.menu = menu;
 
+function togleWireClass(key, elementId) {
+  var tag = document.getElementById(elementId);
+  console.log(tag);
+  tag.classList.toggle("tagSelected");
+}
+
+window.togleWireClass = togleWireClass;
+
 function educationListen() {
   return {
     isEditing: false,
@@ -80,7 +88,7 @@ function subareaListen() {
       var tag = document.getElementById(event.target.id);
       console.log(tag);
       tag.classList.toggle("tagSelected");
-      /* Livewire.emit("onemoreability", key); */
+      Livewire.emit("toggleSubareaModel", key);
     },
     togleTagRemoveClass: function togleTagRemoveClass(key, event) {
       console.log("en el remove tag class");

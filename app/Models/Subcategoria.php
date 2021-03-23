@@ -10,6 +10,11 @@ class Subcategoria extends Model
         'name', 'categoria_id'
     ];
 
+    public function experts()
+    {
+      return $this->belongsToMany('App\Models\Expert');
+    }
+
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag', 'Subcategoria_Tag')->withTimestamps()->orderBy('name');

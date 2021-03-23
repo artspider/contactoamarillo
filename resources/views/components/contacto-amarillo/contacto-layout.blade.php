@@ -218,7 +218,7 @@
             {{$slot}}
         </main>
     </div>
-
+    <x-contacto-amarillo.contacto-footer />
 
     <script src="{{ mix('js/alpine-functions.js') }}"></script>
     @livewireScripts
