@@ -34,7 +34,8 @@ class SpecialityBlock extends Component
     }
 
     public function updateSubareaView()
-    {
+    {   
+        logger('en el updat sub area');
         $this->subcategories = [];
         $user = Auth::user();
         $expert = $user->usable;
@@ -65,8 +66,6 @@ class SpecialityBlock extends Component
     {
         $expert = Expert::find($this->expert_id);
         $subareas =$expert->subcategorias->pluck('name');
-        logger('las subcategorias');
-        logger($this->subcategories);
         foreach ($subareas as $key => $item) {
             array_push($this->subcategoriesFromModel,$item);
             logger('la subcategoria en el modelo');
@@ -81,8 +80,6 @@ class SpecialityBlock extends Component
 
     public function mount()
     {
-
-        $this->emit('totalcaterror','Hasta 3 Categorias solamente')->self();
         $this->updateSubareaView();
     }
 

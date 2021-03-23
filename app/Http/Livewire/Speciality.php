@@ -35,8 +35,7 @@ class Speciality extends Component
             $this->totalcat = 0;
             $this->specialities = null;
         }else{
-            logger('Se cargo especialidad: ');
-            logger($expert->especialidad);
+            
             $this->specialities = explode(",",$expert->especialidad);
             $this->totalcat = count($this->specialities);
         }            
