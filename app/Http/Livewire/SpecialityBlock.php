@@ -44,8 +44,8 @@ class SpecialityBlock extends Component
         if(empty($expert->especialidad)){
             logger('vacio');
             $this->totalcat = 0;
-            $this->specialities = null;
-            $this->subcategories = null;
+            $this->specialities = [];
+            $this->subcategories = [];
         }else{
             //Se cargan las subcategorias y se muestran en la vista
             // specialities es solo un array intermedio
@@ -84,8 +84,7 @@ class SpecialityBlock extends Component
     }
 
     public function render()
-    {
-        dd($this->subcategories);
+    {        
         return view('livewire.speciality-block',[
             'subcategories' => $this->subcategories
         ]);
