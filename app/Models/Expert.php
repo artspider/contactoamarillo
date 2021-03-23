@@ -22,7 +22,7 @@ class Expert extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Models\Tag', 'expert_tag')->withTimestamps()->orderBy('name');
+        return $this->belongsToMany('App\Models\Tag', 'Expert_Tag')->withTimestamps()->orderBy('name');
     }
 
     public function languages()
