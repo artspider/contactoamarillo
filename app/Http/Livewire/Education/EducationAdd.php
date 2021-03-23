@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Education;
 use Livewire\Component;
 use \Illuminate\Session\SessionManager;
 use Illuminate\Support\Facades\Auth;
-use App\Models\titulo;
+use App\Models\Titulo;
 
 class EducationAdd extends Component
 {

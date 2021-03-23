@@ -5,8 +5,8 @@ namespace App\Http\Livewire\Education;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
-use App\Models\expert;
-use App\Models\titulo;
+use App\Models\Expert;
+use App\Models\Titulo;
 
 class Education extends Component
 {

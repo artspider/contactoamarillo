@@ -5,9 +5,9 @@ namespace App\Http\Livewire\Education;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
-use App\Models\expert;
-use App\Models\language;
-use App\Models\expert_language;
+use App\Models\Expert;
+use App\Models\Language;
+use App\Models\Expert_Language;
 
 class Lang extends Component
 {
