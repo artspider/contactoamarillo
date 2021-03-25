@@ -24,13 +24,13 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest'); */
 
-Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
+/* Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')
                 ->name('password.request');
 
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
                 ->middleware('guest')
-                ->name('password.email');
+                ->name('password.email'); */
 
 Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
                 ->middleware('guest')
