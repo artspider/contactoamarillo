@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-guest title="Habilidades">
+<x-contacto-amarillo.contacto-guest title="Login">
     <div class="container mx-auto my-16">
         <div class="flex flex-wrap justify-center mx-6">
             <div class="w-full max-w-sm ">

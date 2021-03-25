@@ -29,8 +29,8 @@
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">
-    <div id="content flex flex-col min-h-screen w-full">
-        <header "
+    <div class="content flex flex-col min-h-screen w-full">
+        <header
         class=" bg-black h-16 xl:h-20 flex items-center justify-between w-full 2xl:pl-16 2xl:pr-16 z-50 flex-shrink-0">
             <div class="container flex items-center justify-between mx-auto ">
                 <div class=" h-10 lg:h-20 flex relative w-full ">
