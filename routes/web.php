@@ -15,6 +15,10 @@ Route::get('/education', function () {
     return view('experts.education');
 })->middleware(['auth'])->name('education');
 
+Route::get('/services', function () {
+    return view('experts.services');
+})->middleware(['auth'])->name('services');
+
 Route::get('/ability', function () {
     return view('experts.ability');
 })->middleware(['auth'])->name('ability');
