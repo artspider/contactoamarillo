@@ -50,6 +50,11 @@ class Expert extends Model
       return $this->hasMany('App\Models\Trabajo');
     }
 
+    public function services()
+    {
+      return $this->hasMany('App\Models\Service');
+    }
+
     public function users()
     {
       return $this->morphOne('App\Models\User', 'usable');

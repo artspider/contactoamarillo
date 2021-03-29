@@ -82,4 +82,16 @@ class Order extends Model
       return $statusMap[$this->status];
     }
 
+    public function services(){
+      $this->hasOne('App\Models\Service');
+    }
+
+    public function experts(){
+      $this->hasOne('App\Models\Expert');
+    }
+
+    public function employers(){
+      $this->hasOne('App\Models\Employer');
+    }
+
 }

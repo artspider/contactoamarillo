@@ -17,6 +17,11 @@ class Tag extends Model
       return $this->belongsToMany('App\Models\Expert');
     }
 
+    public function services()
+    {
+      return $this->belongsToMany('App\Models\Service');
+    }
+
     public function subcategoria()
     {
       return $this->belongsToMany('App\Models\Subcategoria');
