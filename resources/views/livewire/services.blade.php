@@ -2,8 +2,6 @@
     @forelse ($services as $item)
         $item
     @empty
-        <x-contacto-amarillo.contacto-container>
-            Agrega un nuevo sitio
-        </x-contacto-amarillo.contacto-container>
+    <script>window.location = "{{ route('createservice') }}";</script>
     @endforelse
 </div>

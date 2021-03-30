@@ -11,9 +11,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>
         @isset($title)
-        {{$title}} -
+            {{ $title }} -
         @endisset
-        {{ config("app.name", "Contacto-Amarillo") }}
+        {{ config('app.name', 'Contacto-Amarillo') }}
     </title>
 
     <!-- Fonts -->
@@ -26,6 +26,15 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ mix('js/mijs.js') }}"></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
+    <script src="https://cdn.tiny.cloud/1/rsh2ef7sa2rdxifljcs73npyps8fmnoht5ojg0ak1lqljuh8/tinymce/5/tinymce.min.js"
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            inycomments_author: 'Author name',
+        });
+
+    </script>
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">
@@ -207,15 +216,15 @@
     <div class=" min-h-screen flex flex-col">
         <!-- Page Heading -->
         @if (isset($header))
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
         @endif
 
         <main>
-            {{$slot}}
+            {{ $slot }}
         </main>
     </div>
     <x-contacto-amarillo.contacto-footer />

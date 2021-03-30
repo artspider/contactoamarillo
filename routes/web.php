@@ -23,6 +23,10 @@ Route::get('/ability', function () {
     return view('experts.ability');
 })->middleware(['auth'])->name('ability');
 
+Route::get('/createservice', function () {
+    return view('experts.createservice');
+})->middleware(['auth'])->name('createservice');
+
 
 
 require __DIR__.'/auth.php';

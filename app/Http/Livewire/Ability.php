@@ -78,7 +78,7 @@ class Ability extends Component
         }catch(\exception $e){
             session()->flash('error', 'Ocurrio un error. Vuelve a intentar');
             $this->updateAbility();
-            return redirect('expert/habilities');
+            return redirect('ability');
         }
         $this->updateAbility();
     }
