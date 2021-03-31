@@ -21,11 +21,13 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ mix('js/mijs.js') }}"></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
+    <script src="{{ mix('js/dropzone.js') }}" defer></script>
     <script src="https://cdn.tiny.cloud/1/rsh2ef7sa2rdxifljcs73npyps8fmnoht5ojg0ak1lqljuh8/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script>
@@ -232,5 +234,6 @@
     <script src="{{ mix('js/alpine-functions.js') }}"></script>
     @livewireScripts
     @stack('modals')
+
 
 </body>

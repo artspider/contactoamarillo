@@ -27,6 +27,12 @@ Route::get('/createservice', function () {
     return view('experts.createservice');
 })->middleware(['auth'])->name('createservice');
 
+/* Route::post('/submitfoto', function () {
+    return view('experts.submitfoto');
+})->middleware(['auth'])->name('submitfoto'); */
+
+Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
+
 
 
 require __DIR__.'/auth.php';
