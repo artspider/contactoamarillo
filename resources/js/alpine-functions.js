@@ -90,3 +90,18 @@ function subareaListen() {
     };
 }
 window.subareaListen = subareaListen;
+
+function ServiceTagListen() {
+    return {
+        tagId: null,
+        habilidades: true,
+        togleTagClass: function (key, event) {
+            console.log("en el togle tag class");
+            var tag = document.getElementById(event.target.id);
+            console.log(tag);
+            tag.classList.toggle("tagService");
+            Livewire.emit("toggletag", key);
+        },
+    };
+}
+window.ServiceTagListen = ServiceTagListen;

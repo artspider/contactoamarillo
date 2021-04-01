@@ -41,6 +41,7 @@ module.exports = {
     variants: {
         extend: {
             opacity: ["disabled"],
+            outline: ['hover', 'active'],
         },
     },
 

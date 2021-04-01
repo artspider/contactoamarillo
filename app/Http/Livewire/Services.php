@@ -14,13 +14,20 @@ class Services extends Component
 {
     public $services;
 
-    public function mount()
+    protected $listeners = ['deleteService' => 'removeService'];
+
+    public function updateServices()
     {
         $user = Auth::user();
         $expert = $user->usable;        
-        $this->services = $expert->services()->get();
-        
+        $this->services = $expert->services()->get(); 
     }
+
+    public function mount()
+    {
+        $this->updateServices();        
+    }
+
     public function render()
     {
         return view('livewire.services',[
@@ -31,5 +38,17 @@ class Services extends Component
     public function createService()
     {
         return redirect()->to('/createservice');
+    }
+
+    public function removeService($key)
+    {
+        $service = Service::find($key);
+        try{
+            $service->delete();
+            $this->emit('success','Se elimino tu registro');
+            $this->updateServices();  
+        }catch(\Exception $e){
+            $this->emit('deleteerror','No se pudo eliminar el registro');
+        }
     }
 }

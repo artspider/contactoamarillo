@@ -27,6 +27,10 @@ Route::get('/createservice', function () {
     return view('experts.createservice');
 })->middleware(['auth'])->name('createservice');
 
+Route::get('/editservice/{id}', function ($id) {
+    return view('experts.editservice',['id' => $id]);
+})->middleware(['auth'])->name('editservice');
+
 /* Route::post('/submitfoto', function () {
     return view('experts.submitfoto');
 })->middleware(['auth'])->name('submitfoto'); */
