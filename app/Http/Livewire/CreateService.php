@@ -178,7 +178,6 @@ class CreateService extends Component
     public function saveIamgenes()
     {
         session()->forget('service');
-        dd('redirect to srevices');
         return redirect()->to('/services');
     }
 

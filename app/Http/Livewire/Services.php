@@ -17,8 +17,9 @@ class Services extends Component
     public function mount()
     {
         $user = Auth::user();
-        $expert = $user->usable;
+        $expert = $user->usable;        
         $this->services = $expert->services()->get();
+        dd(count($this->services));
     }
     public function render()
     {
