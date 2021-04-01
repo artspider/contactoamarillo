@@ -105,7 +105,8 @@ class CreateService extends Component
 
     public function saveOverview()
     {
-        $expert = Auth::user();
+        $user = Auth::user();
+        $expert = $user->usable;
 
         if(empty($this->serviceId)){
             $service = new Service();            
