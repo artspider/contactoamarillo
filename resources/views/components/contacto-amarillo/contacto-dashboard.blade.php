@@ -7,7 +7,9 @@
         </h2>
     </x-slot>
 
-
+    <x-menuside>
+        
+    </x-menuside>
 
     @push('modals')
     <script>
