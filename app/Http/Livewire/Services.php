@@ -19,7 +19,7 @@ class Services extends Component
         $user = Auth::user();
         $expert = $user->usable;        
         $this->services = $expert->services()->get();
-        dd(count($this->services));
+        
     }
     public function render()
     {
