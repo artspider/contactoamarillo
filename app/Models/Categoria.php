@@ -14,4 +14,9 @@ class Categoria extends Model
     {
         return $this->hasMany('App\Models\Subcategoria')->latest();
     }
+
+    public function services()
+    {
+        return $this->belongsTo('App\Models\Service');
+    }
 }

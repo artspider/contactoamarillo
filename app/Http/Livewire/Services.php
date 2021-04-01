@@ -16,12 +16,19 @@ class Services extends Component
 
     public function mount()
     {
-        $this->services = Service::all();
+        $user = Auth::user();
+        $expert = $user->usable;
+        $this->services = $expert->services()->get();
     }
     public function render()
     {
         return view('livewire.services',[
             'services' => $this->services
         ]);
+    }
+
+    public function createService()
+    {
+        return redirect()->to('/createservice');
     }
 }

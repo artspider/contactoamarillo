@@ -50,7 +50,7 @@ class CreateService extends Component
     ];
 
     public function mount()
-    {
+    {        
         $oldService = Session::has('service') ? Session::get('service') : null;
         if(isset($oldService)){
             logger('hay algo en la sesion');
@@ -159,10 +159,45 @@ class CreateService extends Component
         Session::put('service', $service_session);
     }
 
-    public function sveDescripcion()
-    {}
+    public function saveDescripcion()
+    {
+        $service = Service::find($this->serviceId);
+        $validatedData = $this->validate([
+            'descripcion' => ['required','min:25', new MaxWordsRule(10)],
+        ]);
+        
+        $service->descripcion = $this->descripcion;
+        $service->save();
+        $this->step = 4;
 
-    public function saveGaleria()
-    {}
-     
+        $service_session = new ServiceSession($service);
+        $service_session->step = $this->step;
+        Session::put('service', $service_session);
+    }
+
+    public function saveIamgenes()
+    {
+        session()->forget('service');
+        return redirect()->to('/services');
+    }
+
+    public function savePrecioBack(){
+        $this->step = 1;
+    }
+    
+    public function saveDescripcionBack(){
+        $service = Service::find($this->serviceId);
+        $this->step = 2;
+        $service_session = new ServiceSession($service);
+        $service_session->step = $this->step;
+        Session::put('service', $service_session);
+    }
+    
+    public function saveIamgenesBack(){
+        $service = Service::find($this->serviceId);
+        $this->step = 3;
+        $service_session = new ServiceSession($service);
+        $service_session->step = $this->step;
+        Session::put('service', $service_session);
+    }
 }

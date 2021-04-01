@@ -180,8 +180,12 @@
                     <textarea wire:model="descripcion" id="mytextarea"
                         placeholder="Puedes describir con detalles tu servicio"></textarea>
                 </div>
-                <div class="flex justify-end">
-                    <x-button wire:click="savePrecio" class="mt-4">Guardar & Continuar</x-button>
+                <div class="my-4 text-sm font-semibold text-red-500">
+                    @error('descripcion') <span class="error">{{ $message }}</span> @enderror
+                </div>
+                <div class="flex justify-between">
+                    <x-button wire:click="saveDescripcionBack" class="mt-4 bg-green-500">Atrás</x-button>
+                    <x-button wire:click="saveDescripcion" class="mt-4">Guardar & Continuar</x-button>
                 </div>
             </x-contacto-amarillo.contacto-card>
             <div class="bg-blue-100 rounded-md shadow-md h-32 col-span-2 relative">
@@ -215,8 +219,12 @@
                         @csrf
                     </form>
                 </div>
+                <div class="my-4 text-sm font-semibold text-red-500">
+                    @error('arraytags') <span class=" error">{{ $message }}</span> @enderror
+                </div>
                 <div class="flex justify-end">
-                    <x-button wire:click="savePrecio" class="mt-4">Guardar & finalizar</x-button>
+                    <x-button wire:click="saveIamgenesBack" class="mt-4 bg-green-500">Atrás</x-button>
+                    <x-button wire:click="saveIamgenes" class="mt-4">Guardar & finalizar</x-button>
                 </div>
             </x-contacto-amarillo.contacto-card>
             <div class="bg-blue-100 rounded-md shadow-md h-32 col-span-2 relative">

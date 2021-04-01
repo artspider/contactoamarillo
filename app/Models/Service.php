@@ -19,6 +19,11 @@ class Service extends Model
         'producto_a_entregar'
     ];
 
+    public function categoria()
+    {
+      return $this->belongsTo('App\Models\Categoria');
+    }
+
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag', 'service_tag')->withTimestamps()->orderBy('name');

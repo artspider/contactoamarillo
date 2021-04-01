@@ -5,6 +5,10 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Http\Request;
+use Session;
+
+use App\Models\Service;
+use App\Models\Imagen;
 
 class UploadFoto extends Component
 {
@@ -16,12 +20,19 @@ class UploadFoto extends Component
     {
         $this->photo = $request->file('file');
         $request->validate([
-            'file' => 'image|max:1024', // 1MB Max
+            'file' => 'image|max:2048', // 2MB Max
         ]);
-        
-        logger($this->photo);
-        $this->photo->store('photos');
+
+        $oldService = Session::has('service') ? Session::get('service') : null;
+        if(isset($oldService)){
+            $url_foto = $this->photo->store('fotos', 'public');
+            $image = new Imagen();
+            $image->ruta = str_replace("public","storage", $url_foto); 
+            $image->service_id = $oldService->id;
+            $image->save();
+        }        
     }
+
     public function render()
     {        
         return view('livewire.upload-foto');

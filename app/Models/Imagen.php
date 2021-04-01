@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Imagen extends Model
 {
     use HasFactory;
+
+    protected $table = 'imagenes';
+
+    protected $fillable = [
+        'ruta', 'service_id',
+    ];
+
+    public function services()
+    {
+      return $this->belongsTo('App\Models\Service');
+    }
 }

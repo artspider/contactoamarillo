@@ -33,7 +33,13 @@
     <script>
         tinymce.init({
             selector: '#mytextarea',
+            plugins: [
+                'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                'table emoticons template paste help'
+            ],
             inycomments_author: 'Author name',
+            menubar: 'edit view'
         });
 
     </script>
