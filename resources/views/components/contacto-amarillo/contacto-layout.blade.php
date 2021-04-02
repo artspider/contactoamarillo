@@ -22,14 +22,15 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
     <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
+    <link href="{{ mix('css/filepond.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ mix('js/mijs.js') }}"></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
     <script src="{{ mix('js/dropzone.js') }}" defer></script>
+    <script src="{{ mix('js/filepond.js') }}" defer></script>
 
 </head>
 
