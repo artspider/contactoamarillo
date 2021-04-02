@@ -99,9 +99,21 @@ function ServiceTagListen() {
             console.log("en el togle tag class");
             var tag = document.getElementById(event.target.id);
             console.log(tag);
-            tag.classList.toggle("tagService");
+            tag.classList.toggle("tagSelected");
             Livewire.emit("toggletag", key);
         },
     };
 }
 window.ServiceTagListen = ServiceTagListen;
+
+function descripcion() {
+    return {
+        quillShow: function() {
+            var delta = quill.container.firstChild.innerHTML;
+            console.log(quill.container.firstChild.innerHTML);
+            Livewire.emit("servicedescription", delta);
+        }
+    };
+}
+window.descripcion = descripcion;
+

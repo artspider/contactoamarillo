@@ -104,15 +104,19 @@
             title: thimsg
         });
     })
-    Livewire.on('success', message => {
-        thimsg = message;
-        Toast.fire({
-            icon: 'success',
-            title: thimsg
-        });
-    })
 
 </script>
-
 @endif
 </div>
+@push('modals')
+    <script>
+        Livewire.on('success', message => {
+            thimsg = message;
+            Toast.fire({
+                icon: 'success',
+                title: thimsg
+            });
+        })
+
+    </script>
+@endpush

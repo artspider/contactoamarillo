@@ -37,6 +37,10 @@ Route::get('/editservice/{id}', function ($id) {
 
 Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
 
+Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
+
+
+
 
 
 require __DIR__.'/auth.php';

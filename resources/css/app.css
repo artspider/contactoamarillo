@@ -568,8 +568,12 @@ hr:last-child {
 }
 
 .tagSelected {
-  background-color: teal;
-  color: white;
+  background-color: #ffcf41;
+  color: black;
+}
+.tagSelected:hover {
+  background-color: #fde28f;
+  color: black;
 }
 
 .tagService {

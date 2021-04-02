@@ -3729,10 +3729,6 @@ function confirmAction(toemit, key) {
       console.log(toemit);
       console.log(key);
       Livewire.emit(toemit, key);
-      Toast.fire({
-        title: "Elemento eliminado",
-        icon: "success"
-      });
     }
   });
 }

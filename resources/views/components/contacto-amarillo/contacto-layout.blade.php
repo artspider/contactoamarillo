@@ -23,26 +23,14 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
     <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ mix('js/mijs.js') }}"></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
     <script src="{{ mix('js/dropzone.js') }}" defer></script>
-    <script src="https://cdn.tiny.cloud/1/rsh2ef7sa2rdxifljcs73npyps8fmnoht5ojg0ak1lqljuh8/tinymce/5/tinymce.min.js"
-        referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: '#mytextarea',
-            plugins: [
-                'advlist autolink link image lists charmap print preview hr anchor pagebreak',
-                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-                'table emoticons template paste help'
-            ],
-            inycomments_author: 'Author name',
-            menubar: 'edit view'
-        });
 
-    </script>
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">
