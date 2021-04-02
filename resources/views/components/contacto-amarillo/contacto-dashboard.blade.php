@@ -7,9 +7,24 @@
         </h2>
     </x-slot>
 
+    <!-- Aquì va menuside -->
+
     <x-menuside>
-        
+
+        <!-- Pero creo que aqui deberia de ir cada menuItemUser -->
+
+
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
+        <!-- Y cada menuItem NORMAL -->
     </x-menuside>
+
+
+
 
     @push('modals')
     <script>

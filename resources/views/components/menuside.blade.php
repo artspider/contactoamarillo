@@ -1,20 +1,16 @@
 <div class="w-1/5 h-screen bg-gray-800 flex flex-col text-white">
+
     <div class="h-2/6 bg-gray-800 flex justify-center items-center" >
         <x-menuitemUser>
             <x-slot name="name">
                 Filip Martin Jose
             </x-slot>
-
             <x-slot name="typeAcc">
                 Pro Level
-            </x-slot>
-
-            
-            
+            </x-slot>     
         </x-menuitemUser>
-
-        
     </div>
+
     <div class=" h-4/6 bg-main-yellow rounded-tr-medium">
         <x-menuitemNormal class="mt-16">
             <x-slot name="srcLogo">
