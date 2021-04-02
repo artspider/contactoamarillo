@@ -35,9 +35,12 @@
                                             <td class="px-6 py-4 whitespace-nowrap">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0 h-10 w-10">
-                                                        <img class="h-12 w-16 rounded-sm"
-                                                            src="{{ asset('storage/' . $service->imagenes()->first()->ruta) }}"
-                                                            alt="" />
+                                                        @isset($service->imagenes()->first()->ruta)
+                                                            <img class="h-12 w-16 rounded-sm"
+                                                                src="{{ asset('storage/' . $service->imagenes()->first()->ruta) }}"
+                                                                alt="" />
+                                                        @endisset
+
                                                     </div>
                                                     <div class="ml-4">
                                                         <div class="text-sm font-medium text-gray-900">
