@@ -11,9 +11,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>
         @isset($title)
-        {{$title}} -
+            {{ $title }} -
         @endisset
-        {{ config("app.name", "Contacto-Amarillo") }}
+        {{ config('app.name', 'Contacto-Amarillo') }}
     </title>
 
     <!-- Fonts -->
@@ -24,14 +24,14 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="{{ mix('js/mijs.js') }}"></script>
+
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">
     <div class="content flex flex-col min-h-screen w-full">
         <header
-        class=" bg-black h-16 xl:h-20 flex items-center justify-between w-full 2xl:pl-16 2xl:pr-16 z-50 flex-shrink-0">
+            class=" bg-black h-16 xl:h-20 flex items-center justify-between w-full 2xl:pl-16 2xl:pr-16 z-50 flex-shrink-0">
             <div class="container flex items-center justify-between mx-auto ">
                 <div class=" h-10 lg:h-20 flex relative w-full ">
                     <x-contactoamarillo.logo />
@@ -41,13 +41,14 @@
                         class="flex h-full  items-center justify-end text-white font-semibold ml-6 lg:mr-4 pt-10 pb-6 lg:pt-0 lg:pb-0">
                         <li
                             class="ml-2 mr-8 px-3 py-2 lg:mr-0 lg:my-0 rounded bg-red-700 text-white hover:bg-red-500 hover:text-white">
-                            <a href=" / ">Registrate</a> </li>
+                            <a href=" / ">Registrate</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- Termina Menu lista -->
             </div>
         </header>
-        {{$slot}}
+        {{ $slot }}
         <x-contacto-amarillo.contacto-footer />
     </div>
 </body>
