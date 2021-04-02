@@ -37,10 +37,7 @@
 
         <hr />
         <div class="bg-red-400 bg-transparent mt-8">
-            <form class="dropzone" action="/submitfoto/{{ $serviceId }}" wire:submit.prevent="submitFoto"
-                id="dropzoneimg">
-                @csrf
-            </form>
+
         </div>
         <div class="my-4 text-sm font-semibold text-red-500">
             @error('arraytags') <span class=" error">{{ $message }}</span> @enderror
