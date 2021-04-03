@@ -22,15 +22,14 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
     <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
-    <link href="{{ mix('css/filepond.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
-    <script src="{{ mix('js/dropzone.js') }}" defer></script>
-    <script src="{{ mix('js/filepond.js') }}" defer></script>
+
+
 
 </head>
 
@@ -115,7 +114,7 @@
             <p class=" ml-4">Proyectos</p>
         </x-contacto-amarillo.contacto-menuitem>
 
-        <x-contacto-amarillo.contacto-menuitem class="hover:border-gray-600 border-solid " routeInMenu="dashboard">
+        <x-contacto-amarillo.contacto-menuitem class="hover:border-gray-600 border-solid " routeInMenu="profile">
             <x-slot name="image">
                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -227,6 +226,7 @@
     <x-contacto-amarillo.contacto-footer />
 
     <script src="{{ mix('js/alpine-functions.js') }}"></script>
+
     @livewireScripts
     @stack('modals')
 

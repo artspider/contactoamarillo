@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Education\Education;
+use App\Http\Livewire\Profile\Main;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,13 +33,15 @@ Route::get('/editservice/{id}', function ($id) {
     return view('experts.editservice',['id' => $id]);
 })->middleware(['auth'])->name('editservice');
 
-/* Route::post('/submitfoto', function () {
-    return view('experts.submitfoto');
-})->middleware(['auth'])->name('submitfoto'); */
+Route::middleware(['auth'])
+->get('/profile', Main::class)
+->name('profile');
 
 Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
 
 Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
+
+
 
 
 

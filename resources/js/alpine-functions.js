@@ -16,7 +16,6 @@ window.menu = menu;
 
 function togleWireClass(key, elementId) {
     var tag = document.getElementById(elementId);
-    console.log(tag);
     tag.classList.toggle("tagSelected");
 }
 window.togleWireClass = togleWireClass;
@@ -110,10 +109,8 @@ function descripcion() {
     return {
         quillShow: function() {
             var delta = quill.container.firstChild.innerHTML;
-            console.log(quill.container.firstChild.innerHTML);
             Livewire.emit("servicedescription", delta);
         }
     };
 }
 window.descripcion = descripcion;
-

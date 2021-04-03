@@ -28,10 +28,7 @@
                 <livewire:editservice.galeria :id="$id">
             </div>
 
-            {{-- <div x-show="step===5">
-                <x-contacto-amarillo.contacto-steps step=5 />
 
-            </div> --}}
         </div>
 
     </x-contacto-amarillo.contacto-container>
