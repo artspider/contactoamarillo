@@ -5,8 +5,8 @@
 </x-slot>
 
 <div class="py-12">
-  <div class="grid grid-cols-10 max-w-7xl my-4 gap-4 mx-auto">
-    <div class="col-span-3 row-span-6">
+  <div class="lg:grid lg:grid-cols-10 max-w-7xl my-4 gap-4 mx-auto">
+    <div class="lg:col-span-3 row-span-6">
       <!-- Perfil -->
       <div class="bg-white w-10/12 rounded-md shadow-md pb-2 mb-8">
         <div>
@@ -26,16 +26,15 @@
           >
             {{ $profile->quien_soy }}
           </p>
-          <x-icons.habilities
-            class="text-gray-700"
-            >{{ str_replace(',',', ',$expert->especialidad )  }}</x-icons.habilities
-          >
+          <x-icons.habilities class="text-gray-700"
+            >{{ str_replace(',', ', ', $expert->especialidad) }}
+          </x-icons.habilities>
           <x-icons.location class="text-gray-700"
-            >{{ $profile->estado }}, {{$profile->pais}}</x-icons.location
-          >
+            >{{ $profile->estado }}, {{ $profile->pais }}
+          </x-icons.location>
           <x-icons.contact
             class="text-gray-700"
-            >{{ $expert->email}}</x-icons.contact
+            >{{ $expert->email }}</x-icons.contact
           >
         </div>
       </div>
@@ -94,7 +93,7 @@
       </div>
     </div>
 
-    <div class="col-span-7 col-start-4">
+    <div class="lg:col-span-7 col-start-4">
       <!-- Reseñas -->
       <div class="">
         <h2 class="text-xl font-bold mb-4">Reseñas</h2>
@@ -138,7 +137,7 @@
             </p>
             <div class="flex items-center">
               <img src="https://randomuser.me/api/portraits/men/26.jpg" "
-              class="rounded-full h-12 w-12 object-cover mr-4">
+              class=" rounded-full h-12 w-12 object-cover mr-4">
               <div>
                 <p class="text-sm text-gray-600">Sergio Santana</p>
                 <p class="text-xs text-gray-600">publicada hace</p>
@@ -184,7 +183,7 @@
             </p>
             <div class="flex items-center">
               <img src="https://randomuser.me/api/portraits/men/26.jpg" "
-              class="rounded-full h-12 w-12 object-cover mr-4">
+              class=" rounded-full h-12 w-12 object-cover mr-4">
               <div>
                 <p class="text-sm text-gray-600">Sergio Santana</p>
                 <p class="text-xs text-gray-600">publicada hace</p>
@@ -230,7 +229,7 @@
             </p>
             <div class="flex items-center">
               <img src="https://randomuser.me/api/portraits/men/26.jpg" "
-              class="rounded-full h-12 w-12 object-cover mr-4">
+              class=" rounded-full h-12 w-12 object-cover mr-4">
               <div>
                 <p class="text-sm text-gray-600">Sergio Santana</p>
                 <p class="text-xs text-gray-600">publicada hace</p>
@@ -249,11 +248,15 @@
             Lenguajes
           </h2>
           <div class="bg-white w-full rounded-b-md shadow-md p-4">
-            <ol class="text-base text-gray-700 font-semibold">
-              <li class="mb-4">Español - Nativo</li>
-              <li class="mb-4">Ingles - Intermedio</li>
-              <li class="mb-4">Aleman - Básico</li>
-            </ol>
+            @forelse ($languages as $language)
+            <div class="text-base text-gray-700 font-semibold">
+              <p class="mb-4">
+                {{ $language->language }} - {{ $language->level }}
+              </p>
+            </div>
+            @empty
+            <p>Aún no has agrgado un lenguaje</p>
+            @endforelse
           </div>
         </div>
 
@@ -265,21 +268,13 @@
             Habilidades
           </h2>
           <div class="bg-white w-full rounded-b-md shadow-md p-4">
+            @forelse ($tags as $tag)
             <x-contacto-amarillo.contacto-pill>
-              Diseño</x-contacto-amarillo.contacto-pill
+              {{ $tag->name }}</x-contacto-amarillo.contacto-pill
             >
-            <x-contacto-amarillo.contacto-pill>
-              Contabilidad</x-contacto-amarillo.contacto-pill
-            >
-            <x-contacto-amarillo.contacto-pill>
-              Resdes</x-contacto-amarillo.contacto-pill
-            >
-            <x-contacto-amarillo.contacto-pill>
-              Fotografía</x-contacto-amarillo.contacto-pill
-            >
-            <x-contacto-amarillo.contacto-pill>
-              Redes sociales</x-contacto-amarillo.contacto-pill
-            >
+            @empty
+            <p>Aún no has agregado habilidades</p>
+            @endforelse
           </div>
         </div>
       </div>
@@ -313,6 +308,7 @@
             </tr>
           </thead>
           <tbody>
+            @forelse ($titulos as $titulo)
             <tr
               class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
             >
@@ -321,97 +317,35 @@
               >
                 <span
                   class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Company name</span
+                  >Título</span
                 >
-                KnobHome
+                {{$titulo->carrera}}
               </td>
               <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
+                class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static"
               >
                 <span
                   class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Country</span
+                  >Institución</span
                 >
-                German
+                {{$titulo->escuela}}
               </td>
               <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
+                class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static"
               >
                 <span
                   class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Status</span
+                  >finalizo</span
                 >
-                <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold"
-                  >deleted</span
+                <span
+                  class="rounded bg-red-400 py-1 px-3 text-xs font-bold"
+                  >{{$titulo->fecha_terminacion}}</span
                 >
               </td>
             </tr>
-            <tr
-              class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
-            >
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Company name</span
-                >
-                Squary
-              </td>
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Country</span
-                >
-                Schweden
-              </td>
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Status</span
-                >
-                <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold"
-                  >active</span
-                >
-              </td>
-            </tr>
-            <tr
-              class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
-            >
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Company name</span
-                >
-                ghome
-              </td>
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Country</span
-                >
-                Switzerland
-              </td>
-              <td
-                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static"
-              >
-                <span
-                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase"
-                  >Status</span
-                >
-                <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold"
-                  >inactive</span
-                >
-              </td>
-            </tr>
+            @empty
+            <p>Aún no has agregado títulos</p>
+            @endforelse
           </tbody>
         </table>
       </div>

@@ -628,6 +628,7 @@ hr:last-child {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-image: var(--url-image-pasos-item6);
 }
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -635,4 +636,10 @@ textarea:focus {
   box-shadow: none;
   border: none;
   background: transparent;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none;
+  border: none;
 }

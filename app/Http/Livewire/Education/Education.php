@@ -72,7 +72,7 @@ class Education extends Component
         $escuela = Titulo::find($this->escuela_id);
 
         $data = $this->validate([
-        'escuela' => 'required|min:7',
+        'escuela' => 'required|min:4',
         'carrera' => 'required|min:7',
         'fecha_terminacion' => 'required|min:4|max:4',
         ]);

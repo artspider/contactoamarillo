@@ -50,6 +50,11 @@ class Expert extends Model
       return $this->hasMany('App\Models\Titulo');
     }
 
+    public function certifications()
+    {
+      return $this->hasMany('App\Models\Certification');
+    }
+
     public function trabajos()
     {
       return $this->hasMany('App\Models\Trabajo');

@@ -105,10 +105,24 @@ function ServiceTagListen() {
 }
 window.ServiceTagListen = ServiceTagListen;
 
+function CertificationListen() {
+    return {
+        tagId: null,
+        habilidades: true,
+        prueba: function (key, event) {
+            alert("en el CertificationListen");
+            
+        },
+    };
+}
+window.CertificationListen = CertificationListen;
+
 function descripcion() {
     return {
         quillShow: function() {
+            
             var delta = quill.container.firstChild.innerHTML;
+            console.log(delta);
             Livewire.emit("servicedescription", delta);
         }
     };

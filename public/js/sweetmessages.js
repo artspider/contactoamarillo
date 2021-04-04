@@ -3721,8 +3721,8 @@ function confirmAction(toemit, key) {
     customClass: {
       header: "text-base items-start pl-2 text-left font-semibold text-gray-700",
       content: "text-xs pl-2 text-gray-500",
-      confirmButton: "btn w-2/5 text-xs text-white bg-green-400 font-medium shadow-lg rounded-lg px-4 py-3 mr-4",
-      cancelButton: "btn w-2/5 text-sm text-white bg-red-400 font-medium shadow-lg rounded-lg px-4 py-3"
+      confirmButton: "btn w-2/5 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150 px-4 py-3 mr-4",
+      cancelButton: "btn w-2/5 bg-red-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-700 active:bg-red-900 focus:outline-none focus:border-red-900 focus:ring ring-red-300 disabled:opacity-25 transition ease-in-out duration-150 px-4 py-3"
     }
   }).then(function (result) {
     if (result.isConfirmed) {
