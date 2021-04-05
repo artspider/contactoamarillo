@@ -1,5 +1,5 @@
 <!--  -->
-<footer class="w-full h-32 sticky lg:mt-52 flex flex-col justify-center text-center"
+<footer class="w-full h-32 sticky lg:mt-52 <!-- flex --> flex-col justify-center text-center hidden"
     style="background-image: url('/img/bg-footer-sm.png')">
     <p class="footer--brand text-sm font-bold">Contacto-Amarillo - 2020</p>
     <p class="footer--tm text-xs tracking-tight font-semi-bold">

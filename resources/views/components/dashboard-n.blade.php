@@ -1,3 +1,3 @@
-<div class="bg-blue-600 w-full h-screen">
-    <x-overview/>
+<div class=" lg:w-9/12 bg-white h-screen border-t-2">
+    {{$slot}}
 </div>

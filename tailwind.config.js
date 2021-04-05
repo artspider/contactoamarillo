@@ -44,6 +44,12 @@ module.exports = {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                '2xs': '.6rem',
+            },
+            rotate: {
+                '-30': '-30deg',
+               },
         },
     },
 

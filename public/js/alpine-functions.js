@@ -117,5 +117,33 @@ function ServiceTagListen() {
 }
 
 window.ServiceTagListen = ServiceTagListen;
+
+function input() {
+  return {
+    open: false,
+    focusInput: function focusInput(event) {
+      var inputSear = event.target;
+      console.log(inputSear);
+
+      if (inputSear.classList.contains('inactivo')) {
+        inputSear.classList.remove('inactivo');
+        inputSear.classList.add('activo');
+      }
+
+      console.log('Diste click adentro');
+    },
+    focusLost: function focusLost(event) {
+      var inputSear = event.target;
+      console.log(inputSear);
+
+      if (inputSear.classList.contains('activo')) {
+        inputSear.classList.remove('activo');
+        inputSear.classList.add('inactivo');
+      }
+    }
+  };
+}
+
+window.input = input;
 /******/ })()
 ;

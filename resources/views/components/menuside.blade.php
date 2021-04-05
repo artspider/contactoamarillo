@@ -1,4 +1,4 @@
-<div class="w-1/5 h-screen bg-gray-800 flex flex-col text-white">
+<div class="w-1/4 h-screen bg-gray-800 flex flex-col text-white">
 
     <div class="h-2/6 bg-gray-800 flex justify-center items-center" >
         <x-menuitemUser>
