@@ -4,17 +4,25 @@
   </h2>
 </x-slot>
 
-<div class="py-12">
-  <div class="lg:grid lg:grid-cols-10 max-w-7xl my-4 gap-4 mx-auto">
+<div x-data="{open: true}" x-cloak class="py-12">
+  <div
+    x-show="!open"
+    class="lg:grid lg:grid-cols-10 max-w-7xl my-4 gap-4 mx-auto"
+  >
     <div class="lg:col-span-3 row-span-6">
       <!-- Perfil -->
       <div class="bg-white w-10/12 rounded-md shadow-md pb-2 mb-8">
-        <div>
+        <div class="relative">
           <img
             src="{{ Auth::user()->profile_photo_url }}"
             alt="{{ Auth::user()->name }}"
             class="w-full h-44 object-cover mx-auto"
           />
+          <a href="#" class="absolute top-2 right-2">
+            <x-icons.edit
+              class="text-gray-400 hover:text-black bg-yellow-200 hover:bg-main-yellow mx-auto p-2 rounded-full"
+            ></x-icons.edit>
+          </a>
         </div>
         <div class="bg-black text-main-yellow text-lg font-semibold pl-4 py-1">
           Stars
@@ -351,6 +359,27 @@
       </div>
     </div>
   </div>
+  <div x-show="open">
+    <livewire:profile.edit />
+  </div>
 </div>
 
-@push('modals') @endpush
+@push('modals')
+<script>
+  Livewire.on('success', (message) => {
+    thimsg = message
+    Toast.fire({
+      icon: 'success',
+      title: thimsg,
+    })
+  })
+
+  Livewire.on('error', (message) => {
+    thimsg = message
+    Toast.fire({
+      icon: 'error',
+      title: thimsg,
+    })
+  })
+</script>
+@endpush
