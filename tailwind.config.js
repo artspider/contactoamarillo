@@ -26,6 +26,15 @@ module.exports = {
                 "2xl": "1600px",
                 // => @media (min-width: 1600px) { ... }
             },
+            borderRadius: {
+                'medium': '100px',
+                '2medium': '200px',
+                '3medium': '300px',
+                'large': '400px',
+                '2large': '500px',
+            }
+            ,
+            
             colors: {
                 "light-back": "#fafafa",
                 "light-gray": "#f1f1f1",
@@ -35,6 +44,12 @@ module.exports = {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                '2xs': '.6rem',
+            },
+            rotate: {
+                '-30': '-30deg',
+               },
         },
     },
 

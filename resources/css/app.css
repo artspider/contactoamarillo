@@ -2,6 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.activo{
+  @apply transition-all duration-500 ease-in-out w-48;
+ }
+ 
+.inactivo{
+  @apply transition-all duration-500 ease-in-out w-12;
+}
+
 [x-cloak] {
   display: none !important;
 }

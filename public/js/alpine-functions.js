@@ -117,6 +117,7 @@ function ServiceTagListen() {
 
 window.ServiceTagListen = ServiceTagListen;
 
+<<<<<<< HEAD
 function CertificationListen() {
   return {
     tagId: null,
@@ -135,10 +136,38 @@ function descripcion() {
       var delta = quill.container.firstChild.innerHTML;
       console.log(delta);
       Livewire.emit("servicedescription", delta);
+=======
+function input() {
+  return {
+    open: false,
+    focusInput: function focusInput(event) {
+      var inputSear = event.target;
+      console.log(inputSear);
+
+      if (inputSear.classList.contains('inactivo')) {
+        inputSear.classList.remove('inactivo');
+        inputSear.classList.add('activo');
+      }
+
+      console.log('Diste click adentro');
+    },
+    focusLost: function focusLost(event) {
+      var inputSear = event.target;
+      console.log(inputSear);
+
+      if (inputSear.classList.contains('activo')) {
+        inputSear.classList.remove('activo');
+        inputSear.classList.add('inactivo');
+      }
+>>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
     }
   };
 }
 
+<<<<<<< HEAD
 window.descripcion = descripcion;
+=======
+window.input = input;
+>>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
 /******/ })()
 ;

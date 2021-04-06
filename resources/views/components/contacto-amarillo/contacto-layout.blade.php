@@ -27,6 +27,11 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+<<<<<<< HEAD
+=======
+    <script src="{{ mix('js/mijs.js') }}"></script>
+    <script src="{{ mix('js/alpine-functions.js') }}"></script>
+>>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
 
 
@@ -213,7 +218,7 @@
         <!-- Page Heading -->
         @if (isset($header))
             <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="w-9/12 mx-auto py-6 px-4 sm:px-6 lg:px-8 xl:mr-0">
                     {{ $header }}
                 </div>
             </header>
