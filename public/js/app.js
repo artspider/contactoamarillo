@@ -3802,6 +3802,25 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
+var menuu = document.querySelector('#menu');
+var xxx = document.querySelector('#xxx');
+addEventListener('DOMContentLoaded', function () {
+  function ifElse() {
+    if (innerWidth > 1280) {
+      menuu.style.display = "block";
+      xxx.style.display = "none";
+    } else {
+      menuu.style.display = "none";
+      xxx.style.display = "block";
+    }
+  }
+
+  ifElse();
+  window.addEventListener('resize', function () {
+    ifElse();
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

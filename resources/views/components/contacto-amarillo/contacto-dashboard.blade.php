@@ -13,8 +13,8 @@
 
         
             <div class="lg:flex lg:justify-center xl:justify-end">
-                <x-menuside>
-                </x-menuside>
+                
+
                 <x-dashboard-n>
                     <x-overview >
                             <x-usuarioMob>
