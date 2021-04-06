@@ -1,21 +1,21 @@
 require("./bootstrap");
 require("alpinejs");
 const menuu = document.querySelector('#menu');
-const xxx = document.querySelector('#xxx');
+const closeX = document.querySelector('#closeX');
 
 addEventListener('DOMContentLoaded', ()=>{
-    function ifElse(){
+    function changeResolutionScreen(){
         if (innerWidth > 1280) {
             menuu.style.display="block";
-            xxx.style.display="none"
+            closeX.style.display="none"
         }else{
             menuu.style.display="none";
-            xxx.style.display="block"
+            closeX.style.display="block"
         }
     }
     
-    ifElse();
+    changeResolutionScreen();
     window.addEventListener('resize', ()=>{
-        ifElse();
+        changeResolutionScreen();
     })
 })

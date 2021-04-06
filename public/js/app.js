@@ -3803,21 +3803,21 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 var menuu = document.querySelector('#menu');
-var xxx = document.querySelector('#xxx');
+var closeX = document.querySelector('#closeX');
 addEventListener('DOMContentLoaded', function () {
-  function ifElse() {
+  function changeResolutionScreen() {
     if (innerWidth > 1280) {
       menuu.style.display = "block";
-      xxx.style.display = "none";
+      closeX.style.display = "none";
     } else {
       menuu.style.display = "none";
-      xxx.style.display = "block";
+      closeX.style.display = "block";
     }
   }
 
-  ifElse();
+  changeResolutionScreen();
   window.addEventListener('resize', function () {
-    ifElse();
+    changeResolutionScreen();
   });
 });
 
