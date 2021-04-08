@@ -49,7 +49,10 @@ module.exports = {
             },
             rotate: {
                 '-30': '-30deg',
-               },
+            },
+            backgroundImage: theme => ({
+                'testProfile': "url('https://www.publicdomainpictures.net/pictures/160000/velka/ordinateur-livres-poste-de-travai.jpg')",
+            })
         },
     },
 

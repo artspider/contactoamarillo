@@ -15,8 +15,8 @@
             <div class="lg:flex lg:justify-center xl:justify-end">
                 
 
-                <x-dashboard-n>
-                    <x-overview >
+                <x-container>
+                    <x-overview>
                             <x-usuarioMob>
                                 Hello,
                                 <x-slot name="nombre">
@@ -156,7 +156,7 @@
                                 </x-invoices>
                             </div>
                     </x-overview>
-                </x-dashboard-n>
+                </x-container>
             </div>
 
 

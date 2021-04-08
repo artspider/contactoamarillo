@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/show-profile/showprofile', function () {
+    return view('components.show-profile.showprofile');
+})->middleware(['auth','verified'])->name('showprofile');
+
 Route::get('/dashboard', function () {
     return view('components.contacto-amarillo.contacto-dashboard');
 })->middleware(['auth','verified'])->name('dashboard');
