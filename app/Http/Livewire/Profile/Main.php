@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Profile;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 
 use App\Models\Expert;
 use App\Models\Perfil;
@@ -15,12 +16,15 @@ use App\Models\Tag;
 
 class Main extends Component
 {
+    use WithFileUploads;
+
     public $expert;
     public $expert_id;
     public $profile;
     public $languages;
     public $tags;
     public $titulos;
+    public $curriculum;
 
     public function updateModels($id)
     {
@@ -30,6 +34,9 @@ class Main extends Component
         $this->languages = $expert->languages()->get();
         $this->tags = $expert->tags;
         $this->titulos = $expert->titulos;
+        if($this->profile){
+            $this->curriculum = $this->profile->curriculum_path;
+        }        
     }
 
     public function mount()
@@ -50,5 +57,20 @@ class Main extends Component
             'titulos' => $this->titulos
         ])
         ->layout('components.contacto-amarillo.contacto-layout');
+    }
+
+    public function updatedCurriculum()
+    {
+        
+        $this->validate([
+            'curriculum' => 'file|mimes:pdf|max:1024', // 1MB Max
+        ]);
+        
+        $url_curriculum = $this->curriculum->store('files', 'public');        
+        $expert = Expert::find($this->expert_id);
+        $this->profile = $expert->perfiles()->first();    
+        
+        $this->profile->curriculum_path = $url_curriculum;
+        $this->profile->save();
     }
 }

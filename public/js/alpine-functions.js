@@ -22,7 +22,7 @@ window.menu = menu;
 
 function togleWireClass(key, elementId) {
   var tag = document.getElementById(elementId);
-  tag.classList.toggle("tagSelected");
+  tag.classList.toggle('tagSelected');
 }
 
 window.togleWireClass = togleWireClass;
@@ -37,7 +37,7 @@ function educationListen() {
       this.isEditing = false;
     },
     deleteItem: function deleteItem(id) {
-      confirmAction("eliminarcarrera", id);
+      confirmAction('eliminarcarrera', id);
     }
   };
 }
@@ -47,7 +47,7 @@ window.educationListen = educationListen;
 function languageListen() {
   return {
     deleteItem: function deleteItem(id) {
-      confirmAction("refreshLanguage", id);
+      confirmAction('refreshLanguage', id);
     }
   };
 }
@@ -59,18 +59,18 @@ function abilityListen() {
     tagId: null,
     habilidades: true,
     togleTagClass: function togleTagClass(key, event) {
-      console.log("en el togle tag class");
+      console.log('en el togle tag class');
       var tag = document.getElementById(event.target.id);
       console.log(tag);
-      tag.classList.toggle("tagSelected");
-      Livewire.emit("onemoreability", key);
+      tag.classList.toggle('tagSelected');
+      Livewire.emit('onemoreability', key);
     },
     togleTagRemoveClass: function togleTagRemoveClass(key, event) {
-      console.log("en el remove tag class");
+      console.log('en el remove tag class');
       var tag = document.getElementById(event.target.id);
       console.log(tag);
-      tag.classList.toggle("tagRemoveSelected");
-      Livewire.emit("onelessability", key);
+      tag.classList.toggle('tagRemoveSelected');
+      Livewire.emit('onelessability', key);
     }
   };
 }
@@ -82,19 +82,19 @@ function subareaListen() {
     tagId: null,
     habilidades: true,
     togleTagClass: function togleTagClass(key, event) {
-      console.log("en el togle tag class");
+      console.log('en el togle tag class');
       console.log(event);
       var tag = document.getElementById(event.target.id);
       console.log(tag);
-      tag.classList.toggle("tagSelected");
-      Livewire.emit("toggleSubareaModel", key);
+      tag.classList.toggle('tagSelected');
+      Livewire.emit('toggleSubareaModel', key);
     },
     togleTagRemoveClass: function togleTagRemoveClass(key, event) {
-      console.log("en el remove tag class");
+      console.log('en el remove tag class');
       var tag = document.getElementById(event.target.id);
       console.log(tag);
-      tag.classList.toggle("tagRemoveSelected");
-      Livewire.emit("onelessability", key);
+      tag.classList.toggle('tagRemoveSelected');
+      Livewire.emit('onelessability', key);
     }
   };
 }
@@ -106,24 +106,23 @@ function ServiceTagListen() {
     tagId: null,
     habilidades: true,
     togleTagClass: function togleTagClass(key, event) {
-      console.log("en el togle tag class");
+      console.log('en el togle tag class');
       var tag = document.getElementById(event.target.id);
       console.log(tag);
-      tag.classList.toggle("tagSelected");
-      Livewire.emit("toggletag", key);
+      tag.classList.toggle('tagSelected');
+      Livewire.emit('toggletag', key);
     }
   };
 }
 
 window.ServiceTagListen = ServiceTagListen;
 
-<<<<<<< HEAD
 function CertificationListen() {
   return {
     tagId: null,
     habilidades: true,
     prueba: function prueba(key, event) {
-      alert("en el CertificationListen");
+      alert('en el CertificationListen');
     }
   };
 }
@@ -135,8 +134,13 @@ function descripcion() {
     quillShow: function quillShow() {
       var delta = quill.container.firstChild.innerHTML;
       console.log(delta);
-      Livewire.emit("servicedescription", delta);
-=======
+      Livewire.emit('servicedescription', delta);
+    }
+  };
+}
+
+window.descripcion = descripcion;
+
 function input() {
   return {
     open: false,
@@ -159,15 +163,10 @@ function input() {
         inputSear.classList.remove('activo');
         inputSear.classList.add('inactivo');
       }
->>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
     }
   };
 }
 
-<<<<<<< HEAD
-window.descripcion = descripcion;
-=======
 window.input = input;
->>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
 /******/ })()
 ;

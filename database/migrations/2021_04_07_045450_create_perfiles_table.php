@@ -15,16 +15,16 @@ class CreatePerfilesTable extends Migration
     {
         Schema::create('perfiles', function (Blueprint $table) {
             $table->id();
-            $table->string('fecha_nacimiento')->nullable;
-            $table->string('pais')->nullable;
-            $table->string('estado')->nullable;
-            $table->string('ciudad')->nullable;
-            $table->string('facebook')->nullable;
-            $table->string('twitter')->nullable;
-            $table->string('dribbble')->nullable;
-            $table->string('github')->nullable;
-            $table->string('curriculum_path')->nullable;
-            $table->text('quien_soy')->nullable;
+            $table->string('fecha_nacimiento')->nullable();
+            $table->string('pais')->nullable();
+            $table->string('estado')->nullable();
+            $table->string('ciudad')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('dribbble')->nullable();
+            $table->string('github')->nullable();
+            $table->string('curriculum_path')->nullable();
+            $table->text('quien_soy')->nullable();
             $table->unsignedInteger('expert_id')->constrained();
             $table->timestamps();
         });

@@ -14,18 +14,13 @@
   <x-slot name="form">
     <!-- Quien soy -->
     <div class="col-span-6 sm:col-span-4">
-      <label for="quien_soy" class="block font-medium text-sm text-gray-700"
-        >¿Quién soy?</label
-      >
-      <textarea
-        wire:model.defer="quien_soy"
-        name="quien_soy"
-        id="quien_soy"
-        cols="30"
-        rows="10"
-        class="mt-1 resize-none block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-        >{{ $quien_soy }}</textarea
-      >
+      <label for="quien_soy" class="block font-medium text-sm text-gray-700">¿Quién soy?</label>
+      <textarea wire:model.defer="quien_soy" name="quien_soy" id="quien_soy" cols="30" rows="10"
+        class="mt-1 resize-none block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+        @isset($quien_soy)
+        {{ $quien_soy }}
+        @endisset
+      </textarea>
     </div>
   </x-slot>
 

@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>
         @isset($title)
-            {{ $title }} -
+        {{ $title }} -
         @endisset
         {{ config('app.name', 'Contacto-Amarillo') }}
     </title>
@@ -24,18 +24,12 @@
     <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-<<<<<<< HEAD
-=======
-    <script src="{{ mix('js/mijs.js') }}"></script>
-    <script src="{{ mix('js/alpine-functions.js') }}"></script>
->>>>>>> d57ed6fd1a89e7039ef5e8ee66debd85035c5468
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
-
-
-
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">
@@ -217,11 +211,11 @@
     <div class=" min-h-screen flex flex-col">
         <!-- Page Heading -->
         @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="w-9/12 mx-auto py-6 px-4 sm:px-6 lg:px-8 xl:mr-0">
-                    {{ $header }}
-                </div>
-            </header>
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mt-20 mx-auto py-6 px-6">
+                {{ $header }}
+            </div>
+        </header>
         @endif
 
         <main>

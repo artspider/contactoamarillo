@@ -37,14 +37,12 @@ Route::middleware(['auth'])
 ->get('/profile', Main::class)
 ->name('profile');
 
+Route::get('/show-profile', function () {
+    return view('components.show-profile.showprofile');
+})->middleware(['auth','verified'])->name('showprofile');
+
 Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
 
 Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
-
-
-
-
-
-
 
 require __DIR__.'/auth.php';
