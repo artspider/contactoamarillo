@@ -19,21 +19,26 @@
         </div>
 
         <div class="flex flex-wrap justify-between mt-8">
-            @forelse ($imagenes as $imagen)
-                <div class="relative h-48 w-48">
-                    <img class="h-48 w-48 rounded-sm" src="{{ asset('storage/' . $imagen->ruta) }}" />
-                    <a class="absolute bg-black p-2 rounded-md bottom-2 right-2" href="#"
-                        onclick="confirmAction('deleteImage', {{ $imagen->id }});">
-                        <svg class="w-3 h-4 fill-current text-red-300 hover:text-red-500" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M3 8v16h18v-16h-18zm5 12c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm4-15.375l-.409 1.958-19.591-4.099.409-1.958 5.528 1.099c.881.185 1.82-.742 2.004-1.625l5.204 1.086c-.184.882.307 2.107 1.189 2.291l5.666 1.248z" />
-                        </svg>
-                    </a>
-                </div>
-            @empty
-                <p>Ninguna imagen en tu galeria</p>
-            @endforelse
+            @isset($imagenes)
+            @foreach ($imagenes as $imagen)
+            <div class="relative h-48 w-48">
+                <img class="h-48 w-48 rounded-sm" src="{{ asset('storage/' . $imagen->ruta) }}" />
+                <a class="absolute bg-black p-2 rounded-md bottom-2 right-2" href="#"
+                    onclick="confirmAction('deleteImage', {{ $imagen->id }});">
+                    <svg class="w-3 h-4 fill-current text-red-300 hover:text-red-500" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M3 8v16h18v-16h-18zm5 12c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-8c0-.552.448-1 1-1s1 .448 1 1v8zm4-15.375l-.409 1.958-19.591-4.099.409-1.958 5.528 1.099c.881.185 1.82-.742 2.004-1.625l5.204 1.086c-.184.882.307 2.107 1.189 2.291l5.666 1.248z" />
+                    </svg>
+                </a>
+            </div>
+            @endforeach
+            @endisset
+            @empty($imagenes)
+            <p>Ninguna imagen en tu galeria</p>
+            @endempty
+
+
         </div>
 
         <hr />
@@ -54,11 +59,11 @@
 </div>
 
 @push('modals')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.js"
-        integrity="sha512-J1xl1wAR6FBX2AjZjfxzxK1ZR2vVpQq7Orev/4X2KD7pZkwl/ZjaBwsZ4/hGleyRHVXcoRNYaOljDZQXJI6x3Q=="
-        crossorigin="anonymous"></script>
-    <script>
-        Livewire.on('success', message => {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/dropzone.js"
+    integrity="sha512-J1xl1wAR6FBX2AjZjfxzxK1ZR2vVpQq7Orev/4X2KD7pZkwl/ZjaBwsZ4/hGleyRHVXcoRNYaOljDZQXJI6x3Q=="
+    crossorigin="anonymous"></script>
+<script>
+    Livewire.on('success', message => {
             thimsg = message;
             Toast.fire({
                 icon: 'success',
@@ -86,7 +91,7 @@
 
         };
 
-    </script>
+</script>
 
 
 @endpush

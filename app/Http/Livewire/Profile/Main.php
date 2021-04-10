@@ -24,6 +24,7 @@ class Main extends Component
     public $languages;
     public $tags;
     public $titulos;
+    public $certifications;
     public $curriculum;
 
     public function updateModels($id)
@@ -32,6 +33,7 @@ class Main extends Component
         $this->expert = $expert;
         $this->profile = $expert->perfiles()->first();
         $this->languages = $expert->languages()->get();
+        $this->certifications = $expert->certifications()->get();
         $this->tags = $expert->tags;
         $this->titulos = $expert->titulos;
         if($this->profile){
@@ -68,8 +70,7 @@ class Main extends Component
         
         $url_curriculum = $this->curriculum->store('files', 'public');        
         $expert = Expert::find($this->expert_id);
-        $this->profile = $expert->perfiles()->first();    
-        
+        $this->profile = $expert->perfiles()->first();        
         $this->profile->curriculum_path = $url_curriculum;
         $this->profile->save();
     }

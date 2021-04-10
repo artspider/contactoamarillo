@@ -43,6 +43,10 @@ class Precio extends Component
 
     public function savePrecio()
     {
+        $oldService = Session::has('service') ? Session::get('service') : null;
+        if(isset($oldService)){
+            $this->serviceId = $oldService->id;
+        }
         $service = Service::find($this->serviceId);
         $validatedData = $this->validate([
             'tiempoDeEntrega' => ['required'],
@@ -50,8 +54,7 @@ class Precio extends Component
             'precio' => ['required']
         ]);
 
-       
-
+        
         $service->tiempo_de_entrega = $this->tiempoDeEntrega;
         $service->producto_a_entregar = $this->entregables;
         $service->precio = $this->precio;

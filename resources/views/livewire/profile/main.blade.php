@@ -110,6 +110,7 @@
 
     <div class="lg:col-span-7 col-start-4">
       <!-- Reseñas -->
+      <!-- 
       <div class="">
         <h2 class="text-xl font-bold mb-4">Reseñas</h2>
         <div class="flex flex-wrap justify-between">
@@ -214,10 +215,10 @@
           </div>
         </div>
       </div>
-
-      <div class="flex justify-between">
+      -->
+      <div class="mt-8 lg:mt-0 lg:flex lg:justify-between">
         <!-- Lenguajes -->
-        <div class="mt-14 w-2/5">
+        <div class="w-full lg:w-2/5 ">
           <h2 class="bg-black text-main-yellow text-xl font-bold rounded-tl-md rounded-tr-md p-4">
             Lenguajes
           </h2>
@@ -235,7 +236,7 @@
         </div>
 
         <!-- Habilidades -->
-        <div class="mt-14 w-1/2">
+        <div class="mt-8 lg:mt-0 w-full lg:w-1/2">
           <h2 class="text-black bg-main-yellow text-xl font-bold rounded-tl-md rounded-tr-md p-4">
             Habilidades
           </h2>
@@ -250,8 +251,58 @@
         </div>
       </div>
 
+      <!-- Certificaciones y premios -->
+      <div class="mt-8 lg:mt-14 w-full ">
+        <h2 class="text-black  text-xl font-bold rounded-tl-md rounded-tr-md p-4">
+          Certificaciones y premios
+        </h2>
+        <!-- component -->
+        <table class="border-collapse w-full">
+          <thead>
+            <tr>
+              <th class="p-3 font-bold uppercase text-black bg-main-yellow border border-gray-300 hidden lg:table-cell">
+                Certifiación
+              </th>
+              <th class="p-3 font-bold uppercase text-black bg-main-yellow border border-gray-300 hidden lg:table-cell">
+                Emisor
+              </th>
+              <th class="p-3 font-bold uppercase text-black bg-main-yellow border border-gray-300 hidden lg:table-cell">
+                Año de emisión
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            @forelse ($certifications as $certification)
+            <tr
+              class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+              <td
+                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                <span
+                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Certificación</span>
+                {{$certification->certificado}}
+              </td>
+              <td
+                class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+                <span
+                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Emisor</span>
+                {{$certification->emisor}}
+              </td>
+              <td
+                class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+                <span
+                  class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Año</span>
+                <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold">{{$certification->anio_de_emision}}</span>
+              </td>
+            </tr>
+            @empty
+            <p>Aún no has agregado ningún certificado</p>
+            @endforelse
+          </tbody>
+        </table>
+      </div>
+
       <!-- Educación -->
-      <div class="mt-14 w-full">
+      <div class="mt-8 lg:mt-14 w-full">
         <h2 class="text-black text-xl font-bold rounded-tl-md rounded-tr-md p-4">
           Educación
         </h2>

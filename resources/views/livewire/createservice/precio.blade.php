@@ -10,9 +10,9 @@
                 name="" id="">
                 <option value=" ">Tiempo de entrega</option>
                 @isset($tiempoDeEntregaData) @foreach ($tiempoDeEntregaData as $tiempoDeEntrega)
-                    <option value=" {{ $tiempoDeEntrega }}  ">
-                        {{ $tiempoDeEntrega }}
-                    </option>
+                <option value="{{ $tiempoDeEntrega }}">
+                    {{ $tiempoDeEntrega }}
+                </option>
                 @endforeach @endisset
             </select>
 
@@ -51,8 +51,8 @@
 
 </div>
 @push('modals')
-    <script>
-        Livewire.on('subcatselected', idinview => {
+<script>
+    Livewire.on('subcatselected', idinview => {
             thisid = idinview;
             elementId = "tag" + idinview;
             togleWireClass(thisid, elementId);
@@ -74,5 +74,5 @@
             });
         })
 
-    </script>
+</script>
 @endpush
