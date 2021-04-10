@@ -37,7 +37,7 @@
             <x-show-profile.containerMobile><!-- 91% -->
                 
                 <div class="xl:flex xl:justify-center">
-                    <div class="xl:w-6/12">
+                    <div class="xl:w-full">
                         <x-show-profile.card>
                             <x-show-profile.contact>
                                 <x-slot name="email">
@@ -83,7 +83,7 @@
                     </div>
                 
 
-                    <div class="xl:w-6/12">
+                    <div class="xl:w-full">
                         <x-show-profile.card>
                             <x-show-profile.workExpirienceSlot>
                                 <x-show-profile.workExpirience>

@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/employer/employer-layout', function () {
+    return view('components.employer.employer-layout');
+})->middleware(['auth','verified'])->name('showprofile');
+
 Route::get('/show-profile/showprofile', function () {
     return view('components.show-profile.showprofile');
 })->middleware(['auth','verified'])->name('showprofile');
