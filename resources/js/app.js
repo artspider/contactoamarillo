@@ -1,8 +1,12 @@
 require("./bootstrap");
 require("alpinejs");
 const menuu = document.querySelector('#menu');
+const menuEmplo = document.querySelector('#menuEmplo');
 const closeX = document.querySelector('#closeX');
+const closeXX = document.querySelector('#closeXX');
 const heroBG = document.querySelector('#heroIMG');
+const menuEmploy = document.querySelector('#botonHeader');
+
 
 /* Array IMG */
 const urlImages = [
@@ -13,31 +17,60 @@ const urlImages = [
 ];
 
 
-window.onload = function () {
-
-    function changeImage() {   
-
-        var i = Math.floor((Math.random() * 4));
-        heroBG.style.backgroundImage = 'url("' + urlImages[i] + '")';
-    }
-
-
-    window.setInterval(changeImage, 8000);
-}
-
 addEventListener('DOMContentLoaded', ()=>{
+    function changeImage() {   
+        var i = Math.floor((Math.random() * 4));
+        try {
+            heroBG.style.backgroundImage = 'url("' + urlImages[i] + '")';
+        } catch (error) {
+            console.log('No existe en dashboard el hero');
+        }
+    }
+    window.setInterval(changeImage, 8000);
+
     function changeResolutionScreen(){
         if (innerWidth > 1280) {
-            menuu.style.display="block";
-            closeX.style.display="none"
+            try {
+                menuu.style.display="block";
+                closeX.style.display="none"
+            } catch (error) {
+            }
         }else{
-            menuu.style.display="none";
-            closeX.style.display="block"
+            console.log(innerWidth);
+            try {
+                menuu.style.display="none";
+                closeX.style.display="block"
+            } catch (error) {
+            }
+        }
+    }
+
+    function changeResolutionScreen2(){
+        if (innerWidth > 1280) {
+            try {
+                menuEmploy.style="pointer-events:none;"
+            } catch (error) {
+            }
+
+        }else if(innerWidth>8000){
+            menuEmplo.style.display="block";
+            closeXX.style.display="none"
+        }else{
+            try {
+                menuEmploy.style="pointer-events:auto;"
+                menuEmplo.style.display="none";
+                closeXX.style.display="block"
+            } catch (error) {
+            }
+            
         }
     }
     
     changeResolutionScreen();
+     changeResolutionScreen2();
     window.addEventListener('resize', ()=>{
         changeResolutionScreen();
+        changeResolutionScreen2();
     })
 })
+

@@ -3,6 +3,26 @@ function menu() {
         show: false,
         open: function () {
             this.show = true;
+            console.log(this.show);
+        },
+        close: function () {
+            this.show = false;
+            console.log(this.show);
+        },
+        isOpen: function () {
+            console.log(this.show);
+            return this.show === true;
+            
+        },
+    };
+}
+window.menu = menu;
+
+function menu2() {
+    return {
+        show: false,
+        open: function () {
+            this.show = true;
         },
         close: function () {
             this.show = false;
@@ -12,7 +32,7 @@ function menu() {
         },
     };
 }
-window.menu = menu;
+window.menu2 = menu2;
 
 function togleWireClass(key, elementId) {
     var tag = document.getElementById(elementId);

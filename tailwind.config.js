@@ -56,15 +56,28 @@ module.exports = {
                 '96': '24rem',
                 '300': '36rem',
                 '432': '27rem',
+                '460': '28.7rem',
                 '758': '38rem',
+                '900': '42rem',
                 '1000': '50rem',
             },
+            width: {
+                '1/333': '30%',
+            }
+            ,
             backgroundImage: theme => ({
                 'testProfile': "url('https://www.publicdomainpictures.net/pictures/160000/velka/ordinateur-livres-poste-de-travai.jpg')",
                 'bg1': "url('https://images.unsplash.com/photo-1534120247760-c44c3e4a62f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80')",
                 'bg2': "url('https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')",
                 'bg3': "url('https://images.unsplash.com/photo-1600783486034-4faaa227e01a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')",
                 'bg3': "url('https://images.unsplash.com/photo-1573496546735-c274b1fd186b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')",
+                'bg5': "url('https://images.unsplash.com/photo-1598257006756-51088d8c1126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')",
+                'bg6': "url('https://images.unsplash.com/photo-1498677231914-50deb6ba4217?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')",
+                'bg7': "url('https://images.unsplash.com/flagged/photo-1563713076139-d9f44e576124?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+                'bg8': "url('https://images.unsplash.com/photo-1543269664-7eef42226a21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')",
+                
+
+                
             })
         },
     },

@@ -8,7 +8,7 @@
     </div><!-- IZQ -->
     <x-contacto-amarillo.contacto-logo />
 
-    <div id="menu" x-show="isOpen()" x-on:click.away="close" class="fixed top-0 left-0 w-full bg-black h-full sm:w-1/2 md:w-80">
+    <div id="menuEmplo" x-show="isOpen()" x-on:click.away="close" class="fixed top-0 left-0 w-full bg-black h-full sm:w-1/2 md:w-80">
         {{$slot}}
     </div>
 </header>
