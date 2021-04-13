@@ -36,7 +36,6 @@ addEventListener('DOMContentLoaded', ()=>{
             } catch (error) {
             }
         }else{
-            console.log(innerWidth);
             try {
                 menuu.style.display="none";
                 closeX.style.display="block"
