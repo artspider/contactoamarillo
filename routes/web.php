@@ -7,6 +7,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/employer/categorias/projectsExpertsLayout', function () {
+    return view('components.employer.categorias.projectsExpertsLayout');
+})->middleware(['auth','verified'])->name('showprofile');
+
+Route::get('/employer/categorias/employer-layout-categorias', function () {
+    return view('components.employer.categorias.employer-layout-categorias');
+})->middleware(['auth','verified'])->name('showprofile');
+
 Route::get('/employer/employer-layout', function () {
     return view('components.employer.employer-layout');
 })->middleware(['auth','verified'])->name('showprofile');

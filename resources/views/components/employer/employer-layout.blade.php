@@ -77,7 +77,10 @@
             <main>
                     <x-employer.container>
                         <x-employer.section>
-                            <h2 class="font-bold text-2xl mt-8 mb-5 text-center lg:text-left">Servicios populares</h2>
+                            <div class="flex justify-between items-center">
+                                <h2 class="font-bold text-2xl mt-8 mb-5 text-center lg:text-left">Nuestras categorias</h2>
+                                <a href="{{ url('/categorias') }}" class="text-blue-400 mt-8 mb-5 border-b hover:text-blue-600 hover:border-b hover:border-blue-600">Ver todas</a>
+                            </div>
                                 <x-employer.sliderWrapper class="h-432">
                                     
                                     
@@ -350,7 +353,7 @@
                                             https://randomuser.me/api/portraits/men/8.jpg
                                         </x-slot>
                                         <x-slot name="nameAuthor">
-                                        Scarlett Matthews
+                                            Scarlett Matthews
                                         </x-slot>
                                         <x-slot name="memberSince">
                                             Miembro desde: 2021

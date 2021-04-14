@@ -3831,8 +3831,6 @@ addEventListener('DOMContentLoaded', function () {
         closeX.style.display = "none";
       } catch (error) {}
     } else {
-      console.log(innerWidth);
-
       try {
         menuu.style.display = "none";
         closeX.style.display = "block";
