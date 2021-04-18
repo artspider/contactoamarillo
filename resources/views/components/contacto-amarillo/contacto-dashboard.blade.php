@@ -115,6 +115,10 @@
 
                             <div class="lg:flex justify-around"> 
                                 <x-recommendedProjects>
+
+                                    <x-slot name="path">
+                                            #
+                                    </x-slot>
                                     <x-slot name="nameAutorProject">
                                             Thomas Martin
                                     </x-slot>

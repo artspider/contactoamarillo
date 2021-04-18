@@ -42,32 +42,35 @@
             inycomments_author: 'Author name',
             menubar: 'edit view'
         });
-
     </script>
 </head>
 
-<body class="bg-light-back min-h-full antialiased leading-none relative">
+<body class="bg-light-back min-h-full antialiased leading-none relative ">
     
-    <x-contacto-amarillo.contacto-header>
-        <!-- <x-contacto-amarillo.contacto-profilenav /> -->
-        <x-menuside>
-        </x-menuside>
-    </x-contacto-amarillo.contacto-header>
+        <x-employer.headerEmployer>
+            <x-employer.menuEmployer x-data="menu()">
+                <x-employer.topMenu>
+                    <x-employer.employerMenuItemUSer>
+                        <x-slot name="name">
+                            Carlos Carbajal
+                        </x-slot>
+                        <x-slot name="memberSince">
+                            Member since 2020
+                        </x-slot>     
+                    </x-employer.employerMenuItemUSer>
+                </x-employer.topMenu><!-- TOP MENU -->
 
-    <div class=" min-h-screen flex flex-col">
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="w-9/12 mx-auto py-6 px-4 sm:px-6 lg:px-8 xl:mr-0">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
+                <x-employer.botMenu>
 
-        <main>
-            {{ $slot }}
+                </x-employer.botMenu><!-- BOT MENU -->
+
+            </x-employer.menuEmployer>
+        </x-employer.headerEmployer>
+
+        <main class=" min-h-screen flex flex-col">
+                {{$slot}}
         </main>
-    </div>
+
     <x-contacto-amarillo.contacto-footer />
 
     <script src="{{ mix('js/alpine-functions.js') }}"></script>

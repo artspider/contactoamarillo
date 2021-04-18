@@ -11,8 +11,8 @@
         </x-menuitemUser>
     </div>
 
-    <div class=" h-3/4 bg-main-yellow rounded-tr-medium flex flex-col justify-around">
-        <x-menuitemNormal class="">
+    <div class=" h-3/4 bg-main-yellow rounded-tr-medium flex flex-col justify-around pb-20">
+        <x-menuitemNormal class="{{ Request::is('/dashboard') ? 'text-blue-500 underline' : '' }}">
             <x-slot name="srcLogo">
                 <svg class="h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -23,12 +23,12 @@
                 Dashboard
             </x-slot>
 
-            <x-slot name="active">
-                https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/LoCos_Point.svg/1024px-LoCos_Point.svg.png
+            <x-slot name="path">
+                /dashboard
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
-        <x-menuitemNormal class="">
+        <x-menuitemNormal class="{{Request::is('/bolsadetrabajo') ? 'text-blue-500 underline' : '' }}">
             <x-slot name="srcLogo">
             <svg class="h-6 w-6 fill-current " xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path d="M3 24h19v-23h-1v22h-18v1zm17-24h-18v22h18v-22zm-1 1h-16v20h16v-20zm-2 16h-12v1h12v-1zm0-3h-12v1h12v-1zm0-3h-12v1h12v-1zm-7.348-3.863l.948.3c-.145.529-.387.922-.725 1.178-.338.257-.767.385-1.287.385-.643 0-1.171-.22-1.585-.659-.414-.439-.621-1.04-.621-1.802 0-.806.208-1.432.624-1.878.416-.446.963-.669 1.642-.669.592 0 1.073.175 1.443.525.221.207.386.505.496.892l-.968.231c-.057-.251-.177-.449-.358-.594-.182-.146-.403-.218-.663-.218-.359 0-.65.129-.874.386-.223.258-.335.675-.335 1.252 0 .613.11 1.049.331 1.308.22.26.506.39.858.39.26 0 .484-.082.671-.248.187-.165.322-.425.403-.779zm3.023 1.78l-1.731-4.842h1.06l1.226 3.584 1.186-3.584h1.037l-1.734 4.842h-1.044z"></path>
@@ -39,8 +39,8 @@
                 Bolsa de trabajo
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /bolsadetrabajo
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -55,8 +55,8 @@
                 Notificaciones
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -71,8 +71,8 @@
                 Proyectos
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -87,8 +87,8 @@
                 Portafolio
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -103,8 +103,8 @@
                 Habilidades
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -119,8 +119,8 @@
                 Servicios
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -135,8 +135,8 @@
                 Educación
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -151,8 +151,8 @@
                 Cuenta
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
 
@@ -166,8 +166,8 @@
                 Cerrar sesión
             </x-slot>
 
-            <x-slot name="active">
-                //
+            <x-slot name="path">
+                /
             </x-slot>
         </x-menuitemNormal><!-- Termina item -->
     </div>

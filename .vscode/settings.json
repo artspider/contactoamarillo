@@ -1,3 +1,4 @@
 {
-    "html.format.indentHandlebars": true
+    "html.format.indentHandlebars": true,
+    "typescript.suggest.paths": false
 }
