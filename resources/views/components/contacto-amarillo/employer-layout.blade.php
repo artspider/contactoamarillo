@@ -31,14 +31,14 @@
 
 <body class="bg-light-back min-h-full antialiased leading-none relative ">
   <x-employer.headerEmployer>
-    <x-employer.employerMenuItemUSer>
+    <x-employer.employerMenuItemUser>
       <x-slot name="name">
         Carlos Carbajal
       </x-slot>
       <x-slot name="memberSince">
         Member since 2020
       </x-slot>
-    </x-employer.employerMenuItemUSer>
+    </x-employer.employerMenuItemUser>
   </x-employer.headerEmployer>
 
   {{$slot}}
