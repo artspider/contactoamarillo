@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
+    {{ Breadcrumbs::render('profile') }}
+
     <div class="py-12">
         <x-contacto-amarillo.contacto-container>
             <div class="col-span-8 flex flex-col">

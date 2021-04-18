@@ -14,6 +14,23 @@ function menu() {
 }
 window.menu = menu
 
+function menu2() {
+  return {
+    show: false,
+    open: function open() {
+      this.show = true
+    },
+    close: function close() {
+      this.show = false
+    },
+    isOpen: function isOpen() {
+      return this.show === true
+    },
+  }
+}
+
+window.menu2 = menu2
+
 function togleWireClass(key, elementId) {
   var tag = document.getElementById(elementId)
   tag.classList.toggle('tagSelected')

@@ -2,12 +2,31 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.activo{
+.activo {
   @apply transition-all duration-500 ease-in-out w-48;
- }
- 
-.inactivo{
+}
+
+.inactivo {
   @apply transition-all duration-500 ease-in-out w-12;
+}
+
+.card-zoom {
+  @apply relative w-64 h-full max-w-xs overflow-hidden rounded-lg shadow-md bg-white;
+}
+
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+}
+
+.card-zoom-text {
+  @apply absolute text-lg font-black transition-all duration-500 ease-in-out transform scale-150 text-white opacity-95;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-150;
+}
+.card-zoom:hover .card-zoom-text {
+  @apply scale-100;
 }
 
 [x-cloak] {
@@ -86,6 +105,7 @@
 
   @media screen and (min-width: 768px) {
     --width-card__card--body: 70%;
+    --height-card__card--header: 9rem;
   }
 
   @media screen and (min-width: 1024px) {

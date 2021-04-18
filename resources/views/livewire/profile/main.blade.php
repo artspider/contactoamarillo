@@ -4,6 +4,8 @@
   </h2>
 </x-slot>
 
+{{ Breadcrumbs::render('profile') }}
+
 @isset($profile)
 <div x-data={open:false}>
   <div x-show="!open" class="lg:grid lg:grid-cols-10 max-w-7xl px-6 my-4 gap-4 mx-auto">

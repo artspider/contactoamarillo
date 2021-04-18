@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
+    {{ Breadcrumbs::render('ability') }}
+
     <div class="py-12">
         <livewire:ability />
     </div>

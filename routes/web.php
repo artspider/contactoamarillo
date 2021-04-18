@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Education\Education;
 use App\Http\Livewire\Profile\Main;
+use App\Http\Livewire\Employer\ExpertDetail;
+use App\Http\Livewire\Employer\Dashboard;
 
 
 Route::get('/', function () {
@@ -37,6 +39,10 @@ Route::middleware(['auth'])
 ->get('/profile', Main::class)
 ->name('profile');
 
+Route::middleware(['auth'])
+->get('/expert-profile/{id}', ExpertDetail::class)
+->name('expert-profile');
+
 Route::get('/show-profile', function () {
     return view('components.show-profile.showprofile');
 })->middleware(['auth','verified'])->name('showprofile');
@@ -44,5 +50,12 @@ Route::get('/show-profile', function () {
 Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
 
 Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
+
+
+/* Rutas de employer  */
+
+Route::middleware(['auth', 'verified'])
+->get('/employer/dashboard', Dashboard::class)
+->name('employer-dashboard');
 
 require __DIR__.'/auth.php';

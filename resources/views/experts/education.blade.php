@@ -6,23 +6,25 @@
         </h2>
     </x-slot>
 
+    {{ Breadcrumbs::render('education') }}
+
     @if (session()->has('error'))
-        <script>
-            Toast.fire({
+    <script>
+        Toast.fire({
                 icon: 'error',
                 title: "{{ session('error') }}"
             })
 
-        </script>
+    </script>
     @endif
     @if (session()->has('success'))
-        <script>
-            Toast.fire({
+    <script>
+        Toast.fire({
                 icon: 'success',
                 title: "{{ session('success') }}"
             })
 
-        </script>
+    </script>
     @endif
 
     <div x-data="{}" x-cloak class="py-12">

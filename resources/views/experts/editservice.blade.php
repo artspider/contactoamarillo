@@ -4,7 +4,7 @@
             {{ __('Editar Servicio') }}
         </h2>
     </x-slot>
-
+    {{ Breadcrumbs::render('service', $id) }}
     <!-- grid grid-cols-1 lg:grid-cols-8 gap-4 -->
     <x-contacto-amarillo.contacto-container>
         <div x-data="{step:1}" class="col-span-6">

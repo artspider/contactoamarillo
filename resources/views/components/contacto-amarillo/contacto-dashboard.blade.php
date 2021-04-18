@@ -10,9 +10,9 @@
     </x-slot>
 
     <!-- Aquì va menuside -->
+    {{ Breadcrumbs::render('dashboard') }}
 
-
-    <div class="lg:flex lg:justify-center xl:justify-end">
+    <div class="lg:grid lg:grid-cols-10 max-w-7xl px-6 my-4 gap-4 mx-auto">
         {{-- <x-menuside>
         </x-menuside> --}}
         <x-dashboard-n>
