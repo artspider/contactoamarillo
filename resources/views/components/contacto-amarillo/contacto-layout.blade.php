@@ -24,12 +24,14 @@
     <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
     @livewireStyles
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ mix('js/utils.js') }}" defer></script>
     <script src="{{ mix('js/sweetmessages.js') }}"></script>
+
 </head>
 
 <body class="bg-light-back h-screen antialiased leading-none">

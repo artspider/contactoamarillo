@@ -23,10 +23,12 @@
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
   <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ mix('js/utils.js') }}" defer></script>
   <script src="{{ mix('js/sweetmessages.js') }}"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
 </head>
 
 <body class="bg-light-back min-h-full antialiased leading-none relative ">

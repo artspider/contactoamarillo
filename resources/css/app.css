@@ -11,11 +11,11 @@
 }
 
 .card-zoom {
-  @apply relative w-64 h-full max-w-xs overflow-hidden rounded-lg shadow-md bg-white;
+  @apply relative w-64  max-w-xs overflow-hidden rounded-lg shadow-md bg-white;
 }
 
 .card-zoom-image {
-  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+  @apply absolute w-full  transition-all duration-500 ease-in-out transform bg-center bg-cover;
 }
 
 .card-zoom-text {
@@ -102,6 +102,8 @@
   --url-image-pasos-item4: url('/img/busco_paso4.png');
   --url-image-pasos-item5: url('/img/experto_paso5.png');
   --url-image-pasos-item6: url('/img/experto_paso6.png');
+
+  /* flickity on by default */
 
   @media screen and (min-width: 768px) {
     --width-card__card--body: 70%;
@@ -254,6 +256,58 @@ html {
   .pasos--get-pro {
     flex: 0 0 22%;
   }
+}
+
+/* viewport inherit size from carousel */
+.carousel .flickity-viewport {
+  position: absolute;
+  height: 24rem;
+  width: 100%;
+}
+
+.carousel-cell {
+  counter-increment: carousel-cell;
+}
+
+.carousel:after {
+  content: 'flickity';
+  display: none;
+}
+
+/* buttons, no circle */
+.flickity-prev-next-button {
+  width: 60px;
+  height: 60px;
+  background: black;
+  opacity: 0.6;
+}
+
+.flickity-prev-next-button:hover {
+  background: black;
+  opacity: 1;
+}
+
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: gray;
+}
+
+.flickity-prev-next-button.no-svg {
+  color: black;
+}
+
+/* closer to edge */
+.flickity-prev-next-button.previous {
+  left: 0;
+}
+
+.flickity-prev-next-button.next {
+  right: 0;
+}
+
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
 }
 
 .main__body {

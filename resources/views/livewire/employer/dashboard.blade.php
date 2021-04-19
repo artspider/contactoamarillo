@@ -13,6 +13,7 @@
   </div>
   <main>
     <x-employer.container>
+
       <x-employer.section>
         <div class="flex justify-between items-center">
           <h2 class="font-bold text-2xl mt-8 mb-5 text-center lg:text-left">Nuestras categorias</h2>
@@ -20,22 +21,27 @@
             class="text-blue-400 mt-8 mb-5 border-b hover:text-blue-600 hover:border-b hover:border-blue-600">Ver
             todas</a>
         </div>
-        <x-employer.sliderWrapper class="h-432">
-          @forelse ($categorias as $categoria)
-          <x-employer.sliderItem2 id="/category/{{$categoria->id}}">
-            <x-slot name="imgSource">
-              /img/category_img/{{$categoria->image}}.jpg
-            </x-slot>
 
-            <x-slot name="jobName">
-              {{$categoria->nombre}}
-            </x-slot>
-          </x-employer.sliderItem2>
+        <div class="carousel bg-white mb-8 h-96"
+          data-flickity='{"setGallerySize": false, "initialIndex": 3, "imagesLoaded": true, "percentPosition": false, "watchCSS": true }'>
+          @forelse ($categorias as $categoria)
+          <a href="/category/{{$categoria->id}}"
+            class="carousel-cell border-gray-400 w-64 h-full my-4 ml-3 mr-3 hover:bg-gray-50">
+            <div class="card-zoom h-84 flex flex-row">
+              <img class="h-84 block bg-no-repeat bg-cover rounded-t-lg card-zoom-image"
+                src="/img/category_img/{{$categoria->image}}.jpg" alt="{{$categoria->id}}" />
+
+            </div>
+            <p class="carousel-cell__text text-center mt-2 font-bold">{{$categoria->nombre}}</p>
+          </a>
           @empty
 
           @endforelse
-        </x-employer.sliderWrapper>
+        </div>
+
       </x-employer.section>
+
+
 
       <x-employer.section>
         <h2 class="font-bold text-2xl mt-8 mb-5">
