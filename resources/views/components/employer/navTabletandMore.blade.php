@@ -2,7 +2,7 @@
     <ul class="flex text-white font-bold justify-around items-center">
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/dashboard">Inicio</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/notifications">Notificaciones</a></li>
-        <li class="hover:underline hover:text-main-yellow"><a href="/publish-Project">Publicar proyecto</a></li>
+        <li class="hover:underline hover:text-main-yellow"><a href="/employer/publishproject">Publicar proyecto</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/proyects">Proyectos</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/search-expert">Buscar experto</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/account">Cuenta</a></li>

@@ -5,7 +5,9 @@ use App\Http\Livewire\Education\Education;
 use App\Http\Livewire\Profile\Main;
 use App\Http\Livewire\Employer\ExpertDetail;
 use App\Http\Livewire\Employer\Dashboard;
-
+use App\Http\Livewire\Employer\Subcategoryshow;
+use App\Http\Livewire\Employer\Publishproyect;
+use App\Http\Livewire\Employer\Showprojects;
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,5 +59,22 @@ Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
 Route::middleware(['auth', 'verified'])
 ->get('/employer/dashboard', Dashboard::class)
 ->name('employer-dashboard');
+
+Route::middleware(['auth', 'verified'])
+->get('/employer/category/{id}', Subcategoryshow::class)
+->name('employer-subcategory');
+
+Route::middleware(['auth', 'verified'])
+->get('/employer/publishproject', Publishproyect::class)
+->name('employer-publishproject');
+
+Route::middleware(['auth', 'verified'])
+->get('/employer/showprojects', Showprojects::class)
+->name('employer-showprojects');
+
+/* Muestra las subcategorias por enlaces */
+Route::get('/subcategorias', function () {
+    return view('components.employer.categorias.subCategoryEnlaces');
+});
 
 require __DIR__.'/auth.php';

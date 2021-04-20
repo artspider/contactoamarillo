@@ -25,7 +25,7 @@
         <div class="carousel bg-white mb-8 h-96"
           data-flickity='{"setGallerySize": false, "initialIndex": 3, "imagesLoaded": true, "percentPosition": false, "watchCSS": true }'>
           @forelse ($categorias as $categoria)
-          <a href="/category/{{$categoria->id}}"
+          <a href="/employer/category/{{$categoria->id}}"
             class="carousel-cell border-gray-400 w-64 h-full my-4 ml-3 mr-3 hover:bg-gray-50">
             <div class="card-zoom h-84 flex flex-row">
               <img class="h-84 block bg-no-repeat bg-cover rounded-t-lg card-zoom-image"
@@ -44,7 +44,7 @@
 
 
       <x-employer.section>
-        <h2 class="font-bold text-2xl mt-8 mb-5">
+        <h2 class="font-bold text-2xl mt-16 mb-5">
           ¿Cómo encontrar un freelancer que vuelva realidad tu
           proyecto?
         </h2>

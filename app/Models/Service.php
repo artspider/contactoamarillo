@@ -19,6 +19,11 @@ class Service extends Model
         'producto_a_entregar'
     ];
 
+    public function expert()
+    {
+      return $this->belongsTo('App\Models\Expert');
+    }
+
     public function categoria()
     {
       return $this->belongsTo('App\Models\Categoria');
