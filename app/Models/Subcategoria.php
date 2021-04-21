@@ -15,6 +15,11 @@ class Subcategoria extends Model
       return $this->belongsToMany('App\Models\Expert');
     }
 
+    public function proyects()
+    {
+      return $this->hasMany('App\Models\Proyect');
+    }
+
     public function tags()
     {
         return $this->belongsToMany('App\Models\Tag', 'subcategoria_tag')->withTimestamps()->orderBy('name');

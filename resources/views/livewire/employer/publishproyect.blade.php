@@ -9,8 +9,10 @@
         </p>
         <div class="w-full border-2 border-gray-300">
           <p class="mx-3 mt-2 text-2xl text-gray-400">Quiero que:</p>
-          <textarea wire:model="description" class="border-none resize-none overflow-auto text-xl text-gray-800"
-            name="title" id="" cols="43" rows="5" placeholder="me ayudes a llevar a cabo lo siguiente"></textarea>
+          <textarea wire:model="description"
+            class="w-full h-32 border-none resize-none overflow-auto text-xl text-gray-800"
+            placeholder="me ayudes a llevar a cabo lo siguiente"></textarea>
+
         </div>
       </div>
       <div class="my-4 text-sm font-semibold text-red-500">

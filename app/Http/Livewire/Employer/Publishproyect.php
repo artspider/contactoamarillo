@@ -94,7 +94,12 @@ class Publishproyect extends Component
         $proyect->employer_id = $employer->id;
 
         $proyect->save();
-        $this->emit('showmessagesuccess');
-        return redirect()->to('/employer/showprojects');
+        $this->emit('success', 'Se creo y publico tu proyecto');
+        $this->description = "";
+        $this->delivery_time = 7;
+        $this->budget = null;
+        $this->categoriaId = null;
+        $this->subcategoriaId = null;
+        
     }
 }

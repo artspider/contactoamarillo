@@ -43,7 +43,20 @@
     </x-employer.employerMenuItemUser>
   </x-employer.headerEmployer>
 
-  {{$slot}}
+  <div class=" min-h-screen flex flex-col">
+    <!-- Page Heading -->
+    @if (isset($header))
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mt-20 mx-auto py-6 px-6">
+        {{ $header }}
+      </div>
+    </header>
+    @endif
+
+    <main>
+      {{ $slot }}
+    </main>
+  </div>
 
   <x-contacto-amarillo.contacto-footer />
 

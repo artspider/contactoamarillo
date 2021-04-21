@@ -12,6 +12,12 @@ class Employer extends Model
   protected $fillable = [
     'nombre', 'paterno', 'materno', 'ciudad', 'estado', 'telefono',
   ];
+
+    public function projects()
+    {
+        return $this->hasMany('App\Models\Proyect');
+    }
+    
     public function orders()
     {
         return $this->hasMany('App\Models\Order');

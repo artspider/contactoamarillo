@@ -19,4 +19,9 @@ class Categoria extends Model
     {
         return $this->belongsTo('App\Models\Service');
     }
+
+    public function proyects()
+    {
+      return $this->belongsTo('App\Models\Proyect');
+    }
 }

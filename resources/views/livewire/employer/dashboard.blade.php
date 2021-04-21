@@ -29,7 +29,7 @@
             class="carousel-cell border-gray-400 w-64 h-full my-4 ml-3 mr-3 hover:bg-gray-50">
             <div class="card-zoom h-84 flex flex-row">
               <img class="h-84 block bg-no-repeat bg-cover rounded-t-lg card-zoom-image"
-                src="/img/category_img/{{$categoria->image}}.jpg" alt="{{$categoria->id}}" />
+                src="/img/category_img/{{$categoria->image}}-1.jpg" alt="{{$categoria->id}}" />
 
             </div>
             <p class="carousel-cell__text text-center mt-2 font-bold">{{$categoria->nombre}}</p>
@@ -41,8 +41,6 @@
 
       </x-employer.section>
 
-
-
       <x-employer.section>
         <h2 class="font-bold text-2xl mt-16 mb-5">
           ¿Cómo encontrar un freelancer que vuelva realidad tu
@@ -51,7 +49,10 @@
         <x-employer.wrapperSection>
           <x-employer.itemGetFreelancer>
             <x-slot name="iconSrc">
-              https://www.flaticon.com/svg/vstatic/svg/3603/3603870.svg?token=exp=1618242807~hmac=13aedeec0af884a58e1f1c6aa6668e7d
+              <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M0 0v19h24v-19h-24zm22 17h-20v-15h20v15zm-6.599 4l2.599 3h-12l2.599-3h6.802zm-6.401-16l6 4.674-2.538.427 1.538 3.095-1.571.804-1.546-3.157-1.883 1.759v-7.602z" />
+              </svg>
             </x-slot>
             <x-slot name="nameItem">
               Publicar un trabajo
@@ -64,7 +65,10 @@
 
           <x-employer.itemGetFreelancer>
             <x-slot name="iconSrc">
-              https://www.flaticon.com/svg/vstatic/svg/1584/1584961.svg?token=exp=1618243181~hmac=19daa77b3b66ddcebce59a1a7fef95cd
+              <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M19.5 15c-2.483 0-4.5 2.015-4.5 4.5s2.017 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.017-4.5-4.5-4.5zm2.5 5h-2v2h-1v-2h-2v-1h2v-2h1v2h2v1zm-7.18 4h-14.815l-.005-1.241c0-2.52.199-3.975 3.178-4.663 3.365-.777 6.688-1.473 5.09-4.418-4.733-8.729-1.35-13.678 3.732-13.678 6.751 0 7.506 7.595 3.64 13.679-1.292 2.031-2.64 3.63-2.64 5.821 0 1.747.696 3.331 1.82 4.5z" />
+              </svg>
             </x-slot>
             <x-slot name="nameItem">
               Encuentra a tu freelancer ideal
@@ -78,7 +82,10 @@
 
           <x-employer.itemGetFreelancer>
             <x-slot name="iconSrc">
-              https://www.flaticon.es/svg/vstatic/svg/1086/1086741.svg?token=exp=1618243240~hmac=0a581aa04caa488e197861013a65d1a8
+              <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M22 4h-20c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h20c1.104 0 2-.896 2-2v-12c0-1.104-.896-2-2-2zm0 13.5c0 .276-.224.5-.5.5h-19c-.276 0-.5-.224-.5-.5v-6.5h20v6.5zm0-9.5h-20v-1.5c0-.276.224-.5.5-.5h19c.276 0 .5.224.5.5v1.5zm-9 6h-9v-1h9v1zm-3 2h-6v-1h6v1zm10-2h-3v-1h3v1z" />
+              </svg>
             </x-slot>
             <x-slot name="nameItem">
               Paga de manera segura
