@@ -77,4 +77,11 @@ Route::get('/subcategorias', function () {
     return view('components.employer.categorias.subCategoryEnlaces');
 });
 
+
+/* Ruta parcial para buscar expert */
+Route::get('/search-expert', function () {
+    return view('components.employer.searchEmployer');
+});
+
+
 require __DIR__.'/auth.php';
