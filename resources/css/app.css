@@ -596,11 +596,11 @@ p.subtitulo {
   resize: none;
 }
 
-input:focus,
+/* input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-}
+} */
 
 .tooltip {
   position: relative;
@@ -711,8 +711,7 @@ hr:last-child {
   background-image: var(--url-image-pasos-item6);
 }
 
-select:focus,
-textarea:focus {
+.modal--msj:focus {
   outline: none !important;
   box-shadow: none;
   border: none;

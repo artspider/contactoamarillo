@@ -8,6 +8,8 @@ use App\Http\Livewire\Employer\Dashboard;
 use App\Http\Livewire\Employer\Subcategoryshow;
 use App\Http\Livewire\Employer\Publishproyect;
 use App\Http\Livewire\Employer\Showprojects;
+use App\Http\Livewire\Jobsbag;
+use App\Http\Livewire\Employer\Notificaciones;
 
 Route::get('/', function () {
     return view('welcome');
@@ -53,6 +55,10 @@ Route::post('/submitfoto', \App\Http\Livewire\UploadFoto::class);
 
 Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
 
+Route::middleware(['auth', 'verified'])
+->get('/jobsbag', Jobsbag::class)
+->name('jobsbag');
+
 
 /* Rutas de employer  */
 
@@ -76,5 +82,9 @@ Route::middleware(['auth', 'verified'])
 Route::get('/subcategorias', function () {
     return view('components.employer.categorias.subCategoryEnlaces');
 });
+
+Route::middleware(['auth', 'verified'])
+->get('employer/notifications/{employerId}', Notificaciones::class)
+->name('employer-notifications');
 
 require __DIR__.'/auth.php';

@@ -1,7 +1,8 @@
 <div class="hidden xl:block w-900">
     <ul class="flex text-white font-bold justify-around items-center">
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/dashboard">Inicio</a></li>
-        <li class="hover:underline hover:text-main-yellow"><a href="/notifications">Notificaciones</a></li>
+        <li class="hover:underline hover:text-main-yellow"><a
+                href="/employer/notifications/{{Auth::user()->usable->id}}">Notificaciones</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/publishproject">Publicar proyecto</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/showprojects">Proyectos</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/search-expert">Buscar experto</a></li>

@@ -354,6 +354,7 @@
       </div>
     </div>
   </div>
+
   <div x-show="open">
     <livewire:profile.edit />
   </div>

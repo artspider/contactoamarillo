@@ -27,4 +27,9 @@ class Employer extends Model
     {
       return $this->morphOne('App\Models\User', 'usable');
     }
+
+    public function messages()
+    {
+      return $this->hasMany('App\Models\Message');
+    }
 }

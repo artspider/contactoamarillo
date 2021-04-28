@@ -82,4 +82,9 @@ class Expert extends Model
       if($ciudad)
         return $query->Where('ciudad', 'LIKE', "%$ciudad%");
     }
+
+    public function messages()
+    {
+      return $this->hasMany('App\Models\Message');
+    }
 }

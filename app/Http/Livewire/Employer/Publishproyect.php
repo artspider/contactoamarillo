@@ -89,8 +89,8 @@ class Publishproyect extends Component
         $proyect->delivery_time = $this->delivery_time;
         $proyect->budget = $this->budget;
         $proyect->status = "no_iniciado";        
-        $proyect->category_id = $this->categoriaId;
-        $proyect->subcategory_id = $this->subcategoriaId;
+        $proyect->categoria_id = $this->categoriaId;
+        $proyect->subcategoria_id = $this->subcategoriaId;
         $proyect->employer_id = $employer->id;
 
         $proyect->save();
