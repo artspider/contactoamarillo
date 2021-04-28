@@ -39,3 +39,8 @@ Breadcrumbs::for('profile-show', function ($trail,$id) {
     $trail->parent('profile');
     $trail->push($id, route('expert-profile', $id));
 });
+
+Breadcrumbs::for('jobsbag', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Jobs Bag', route('jobsbag'));
+});
