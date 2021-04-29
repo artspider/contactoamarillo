@@ -1,3 +1,3 @@
-<div class="bg-white w-2/5 h-52 rounded-3xl text-white flex flex-col justify-around items-center sm:w-56 ">
+<div class=" w-1/2 h-full rounded-2xl text-white flex flex-col justify-around sm:w-56 bg-white">
     {{$slot}}
 </div>

@@ -23,16 +23,19 @@
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
   <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  @livewireStyles
+
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ mix('js/utils.js') }}" defer></script>
   <script src="{{ mix('js/sweetmessages.js') }}"></script>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+
 </head>
 
-<body class="bg-light-back min-h-full antialiased leading-none relative ">
-  <x-employer.headerEmployer>
+<body class="bg-light-back h-screen antialiased leading-none">
+  <!-- Header & Nav -->
+  <x-contacto-amarillo.contacto-header>
     <x-layouts.menu>
       <x-slot name="profile">
         <x-layouts.profile-nav />
@@ -201,7 +204,8 @@
         </form>
       </div>
     </x-layouts.menu>
-  </x-employer.headerEmployer>
+  </x-contacto-amarillo.contacto-header>
+  <!-- Termina Header & Nav -->
 
   <div class=" min-h-screen flex flex-col">
     <!-- Page Heading -->
@@ -212,19 +216,23 @@
       </div>
     </header>
     @endif
+    <!-- Termina Page Heading -->
 
     <main>
       {{ $slot }}
     </main>
+
   </div>
 
+  <!-- Footer -->
   <x-contacto-amarillo.contacto-footer />
+  <!-- Termina Footer -->
 
+  <!-- Scripts -->
   <script src="{{ mix('js/alpine-functions.js') }}"></script>
   @livewireScripts
   @stack('modals')
-
-
+  <!-- -->
 </body>
 
 </html>

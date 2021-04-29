@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-layout>
+<x-layouts.master title="Education">
 
     <x-slot name="header">
         <h2 class="font-semibold text-sm xl:text-xl text-gray-800 leading-tight">
@@ -44,4 +44,4 @@
 
         </section>
     </div>
-</x-contacto-amarillo.contacto-layout>
+    </x-contacto-amarillo.contacto-layout>

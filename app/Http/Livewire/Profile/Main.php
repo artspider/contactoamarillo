@@ -58,7 +58,7 @@ class Main extends Component
             'tags' => $this->tags,
             'titulos' => $this->titulos
         ])
-        ->layout('components.contacto-amarillo.contacto-layout');
+        ->layout('components.layouts.master');
     }
 
     public function updatedCurriculum()

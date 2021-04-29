@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-layout title="Crear servicio">
+<x-layouts.master title="Create service">
     <x-slot name="header">
         <h2 class="font-semibold text-sm xl:text-base text-gray-800 leading-tight">
             {{ __('Crear nuevo servicio') }}
@@ -12,4 +12,4 @@
     @push('modals')
 
     @endpush
-</x-contacto-amarillo.contacto-layout>
+    </x-contacto-amarillo.contacto-layout>

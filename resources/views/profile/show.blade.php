@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-layout title="Perfil">
+<x-layouts.master title="Perfil">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Perfil') }}
@@ -42,4 +42,4 @@
             @endif
         </div>
     </div>
-</x-contacto-amarillo.contacto-layout>
+    </x-contacto-amarillo.contacto-layout>

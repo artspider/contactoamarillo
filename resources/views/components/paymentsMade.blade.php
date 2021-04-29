@@ -8,9 +8,13 @@
             <p>JQ Holdings</p>
         </div>
     </div>
+    <div class=" ">
+        <p class="hidden md:flex  py-2 px-4 text-center bg-gray-200 rounded-full font-bold">Paid</p>
+
+    </div>
     <div>
         <p class="font-bold mb-1 text-lg">$ 1,200.87</p>
-        <p class="py-2 px-2 text-center bg-gray-200 rounded-full font-bold">Paid</p>
+        <p class=" lg:hidden py-2 px-4 text-center bg-gray-200 rounded-full font-bold">Paid</p>
     </div>
-    
+
 </div>

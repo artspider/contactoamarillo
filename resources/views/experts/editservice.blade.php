@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-layout title="Editar servicio">
+<x-layouts.master title="Edit service">
     <x-slot name="header">
         <h2 class="font-semibold text-sm xl:text-base text-gray-800 leading-tight">
             {{ __('Editar Servicio') }}
@@ -32,4 +32,4 @@
         </div>
 
     </x-contacto-amarillo.contacto-container>
-</x-contacto-amarillo.contacto-layout>
+    </x-contacto-amarillo.contacto-layout>

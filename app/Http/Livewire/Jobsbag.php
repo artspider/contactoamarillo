@@ -41,7 +41,7 @@ class Jobsbag extends Component
     {
         return view('livewire.jobsbag',[
         'projects' => $this->projects
-        ])->layout('components.contacto-amarillo.contacto-layout');
+        ])->layout('components.layouts.master');
     }
 
     public function sendEmployerId($employer_id)

@@ -1,4 +1,4 @@
-<x-contacto-amarillo.contacto-layout title="Profile">
+<x-layouts.master title="Profile">
     <x-slot name="header">
         <h2 class="font-semibold text-sm xl:text-base text-gray-800 leading-tight">
             {{ __('Perfil') }}
@@ -18,4 +18,4 @@
     @push('modals')
 
     @endpush
-</x-contacto-amarillo.contacto-layout>
+    </x-contacto-amarillo.contacto-layout>

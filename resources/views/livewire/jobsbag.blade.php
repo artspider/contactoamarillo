@@ -67,8 +67,6 @@
 
     {{ Breadcrumbs::render('jobsbag') }}
 
-
-
     <div class="py-12">
 
       <x-contacto-amarillo.contacto-container>
