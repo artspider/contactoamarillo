@@ -258,6 +258,19 @@ html {
   }
 }
 
+/* Border */
+
+.borderninguno {
+        border-style: none!important;
+        border-color: Transparent!important;
+        overflow: auto!important;
+        outline: none!important;
+}
+
+textarea:focus {
+  outline: none!important;
+}
+
 /* viewport inherit size from carousel */
 .carousel .flickity-viewport {
   position: absolute;

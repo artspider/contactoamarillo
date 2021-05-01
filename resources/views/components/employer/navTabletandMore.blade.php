@@ -1,4 +1,4 @@
-<div class="hidden xl:block w-900">
+<div class="hidden lg:block w-1000">
     <ul class="flex text-white font-bold justify-around items-center">
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/dashboard">Inicio</a></li>
         <li class="hover:underline hover:text-main-yellow"><a

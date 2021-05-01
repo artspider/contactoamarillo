@@ -7,7 +7,7 @@
 
                     <x-employer.inputSearchEmployer>
                         <x-slot name="label">
-                            Perfil
+                            Habilidad
                         </x-slot>
 
                         <x-slot name="labelId">
