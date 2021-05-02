@@ -28,7 +28,7 @@
       <!-- Termina Menu -->
 
 
-      <div class="mr-4 lg:hidden">Logout</div>
+      
       <x-employer.navTabletandMore>
       </x-employer.navTabletandMore>
     </div>

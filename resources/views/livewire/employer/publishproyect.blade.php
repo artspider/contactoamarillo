@@ -9,8 +9,8 @@
         </p>
         <div class="w-full border-2 border-gray-300">
           <p class="mx-3 mt-2 text-2xl text-gray-400">Quiero que:</p>
-          <textarea wire:model="description"
-            class="w-full h-32 border-none resize-none overflow-auto text-xl text-gray-800"
+          <textarea id="textA" wire:model="description"
+            class="w-full h-32 resize-none overflow-auto text-xl text-gray-800 focus:border-main-yellow border-none borderninguno focus:ring-0"
             placeholder="me ayudes a llevar a cabo lo siguiente"></textarea>
 
         </div>
@@ -23,7 +23,7 @@
       <div class="mt-4 flex flex-col lg:flex-row  justify-between lg:items-center">
         <p class="uppercase">Categoria</p>
         <select wire:model="categoriaId"
-          class="w-full lg:w-2/5 text-sm uppercase tracking-tight font-bold border-2 border-gray-300 focus:ring-2 focus:ring-yellow-300 rounded-lg py-1 px-3 mb-1 mt-2 lg:mt-0"
+          class="w-full lg:w-2/5 text-sm uppercase tracking-tight font-bold border-2 border-gray-300 focus:border-transparent focus:ring-2 focus:ring-yellow-300 rounded-lg py-1 px-3 mb-1 mt-2 lg:mt-0 outline-none "
           name="clasificacion" id="clasificacion" placeholder="Selecciona una categoria">
           <option value=" ">Selecciona una categoria</option>
           @isset($categorias)
@@ -36,7 +36,7 @@
         </select>
 
         <select wire:model="subcategoriaId"
-          class="w-full lg:w-2/5 text-sm uppercase font-bold border-2 border-gray-300 focus:ring-2 focus:ring-yellow-300 rounded-lg py-1 px-4 mb-1 mt-2 lg:mt-0"
+          class="w-full lg:w-2/5 text-sm uppercase font-bold border-2 border-gray-300 focus:ring-2 focus:border-transparent focus:ring-yellow-300 rounded-lg py-1 px-4 mb-1 mt-2 lg:mt-0"
           name="clasificacion" id="clasificacion" placeholder="Selecciona una Subcategoria">
           <option value=" ">Selecciona una subcategoria</option>
           @isset($subcategorias) @foreach ($subcategorias as $subcategoria)
