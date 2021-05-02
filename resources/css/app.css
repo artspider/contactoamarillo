@@ -282,6 +282,12 @@ textarea:focus {
   counter-increment: carousel-cell;
 }
 
+.carousel-cell-serv {
+  width: 100%; /* full width */
+  height: 160px; /* height of carousel */
+  margin-right: 10px;
+}
+
 .carousel:after {
   content: 'flickity';
   display: none;

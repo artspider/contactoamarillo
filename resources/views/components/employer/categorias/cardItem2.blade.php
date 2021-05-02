@@ -1,6 +1,8 @@
-<a href="#" class="flex flex-col w-11/12 mb-10 bg-transparent mx-auto h-48 shadow hover:shadow-md sm:w-758 md:w-96 md:h-460">
+<a href="{{$ruta}}"
+    class="flex flex-col w-11/12 mb-10 bg-transparent mx-auto h-48 shadow hover:shadow-md sm:w-758 md:w-96 md:h-460">
     <div class="flex h-3/4 md:flex-col md:h-5/6">
-        <img class="object-cover w-1/3 h-full rounded-l-lg border-yellow-600 border-l-8 lg:rounded-r-lg md:h-3/4 md:w-full" src="{{$srcImage}}" alt="">
+        <img class="object-cover w-1/3 h-full rounded-l-lg border-yellow-600 border-l-8 lg:rounded-r-lg md:h-3/4 md:w-full"
+            src="{{$srcImage}}" alt="">
 
         <div class="w-2/3 h-full flex flex-col justify-around items-start pl-5 bg-gray-100 md:h-1/4 md:w-full">
             <p class="text-base font-bold">{{$slot}}</p>

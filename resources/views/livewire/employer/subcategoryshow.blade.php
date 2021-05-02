@@ -1,5 +1,4 @@
 <div>
-
     <div x-data="{ subcat: @entangle('subcatselected') }" class="flex flex-col mb-8">
         <div class="mt-32 mb-8">
             <x-employer.container>

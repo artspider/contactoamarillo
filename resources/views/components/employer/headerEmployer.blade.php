@@ -1,4 +1,4 @@
-<header x-data="menu()" x-cloak class=" bg-black h-16 text-white xl:h-24 fixed z-40 w-full">
+<header x-data="menu()" x-cloak class=" bg-black bg-transparent h-16 text-white xl:h-24 fixed z-40 w-full">
   <x-employer.container>
     <div class="flex justify-between items-center ">
 

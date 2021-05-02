@@ -74,8 +74,8 @@ class EditPersonals extends Component
     public function updatePersonals()
     {        
         if($this->profile_id){
-                    
-            $profile = Perfil::find($this->profile_id)->first();
+            
+            $profile = Perfil::find($this->profile_id);
             $profile->pais = $this->country;
             if($this->state){
                 $profile->estado = $this->state;
