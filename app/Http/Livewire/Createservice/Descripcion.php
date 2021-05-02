@@ -38,14 +38,29 @@ class Descripcion extends Component
 
     public function saveDescripcion($delta)
     {
-        $service = Service::find($this->serviceId);
+        try{
+            $service = Service::find($this->serviceId);
+        }catch(Exception $error){
+            $this->emit('error','Hubo un error');
+        }
+        
         $this->descripcion = $delta;
         $validatedData = $this->validate([
-            'descripcion' => ['required','min:25', new MaxWordsRule(10)],
+            'descripcion' => ['required','min:25', new MaxWordsRule(5)],
         ]);
         
-        $service->descripcion = $this->descripcion;
-        $service->save();
+        logger($this->descripcion);
+        logger($service);
+
+        $service->descripcion = $delta;
+        try{
+            $service->save();
+            $this->emit('showquill',1);
+            $this->emit('success','Se actualizaron tus datos');
+        }catch(Exception $error){
+            $this->emit('error','Hubo un error');
+        }
+
         $this->step = 4;
 
         $service_session = new ServiceSession($service);

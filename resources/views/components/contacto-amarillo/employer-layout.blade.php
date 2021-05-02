@@ -31,7 +31,7 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
 </head>
 
-<body class="bg-light-back min-h-full antialiased leading-none relative ">
+<body class="bg-light-back  min-h-full antialiased leading-none relative ">
   <x-employer.headerEmployer>
     <x-layouts.menu>
       <x-slot name="profile">

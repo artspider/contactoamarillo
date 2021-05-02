@@ -10,6 +10,8 @@ use App\Http\Livewire\Employer\Publishproyect;
 use App\Http\Livewire\Employer\Showprojects;
 use App\Http\Livewire\Jobsbag;
 use App\Http\Livewire\Employer\Notificaciones;
+use App\Http\Livewire\Employer\SearchResult;
+use App\Http\Livewire\ShowService;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +49,10 @@ Route::middleware(['auth'])
 ->get('/expert-profile/{id}', ExpertDetail::class)
 ->name('expert-profile');
 
+Route::middleware(['auth', 'verified'])
+->get('/expert/showservice/{id}', ShowService::class)
+->name('expert-showservice');
+
 Route::get('/show-profile', function () {
     return view('components.show-profile.showprofile');
 })->middleware(['auth','verified'])->name('showprofile');
@@ -58,6 +64,10 @@ Route::post('/submitfoto/{id}', \App\Http\Livewire\UpdateFoto::class);
 Route::middleware(['auth', 'verified'])
 ->get('/jobsbag', Jobsbag::class)
 ->name('jobsbag');
+
+Route::middleware(['auth', 'verified'])
+->get('expert/notifications/{expertId}', App\Http\Livewire\Notificaciones::class)
+->name('expert-notifications');
 
 
 /* Rutas de employer  */
@@ -88,9 +98,8 @@ Route::middleware(['auth', 'verified'])
 ->name('employer-notifications');
 
 Route::middleware(['auth', 'verified'])
-->get('employer/notifications/{employerId}', Notificaciones::class)
-->name('employer-notifications');
-
+->get('employer/searchresult/{search}', SearchResult::class)
+->name('employer-searchresult');
 
 /* Ruta parcial para buscar expert */
 Route::get('/search-expert', function () {

@@ -50,7 +50,7 @@ class Precio extends Component
         $service = Service::find($this->serviceId);
         $validatedData = $this->validate([
             'tiempoDeEntrega' => ['required'],
-            'entregables' => ['required','min:25', new MaxWordsRule(10)],
+            'entregables' => ['required','min:25', new MaxWordsRule(5)],
             'precio' => ['required']
         ]);
 

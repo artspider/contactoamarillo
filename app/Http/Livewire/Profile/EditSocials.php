@@ -48,6 +48,7 @@ class EditSocials extends Component
         $expert = $user->usable;
         $this->expert_id = $expert->id;
         $profile = $expert->perfiles()->first();
+        logger($profile);
         if($profile){
             $this->profile_id = $profile->id;
         }
@@ -62,7 +63,7 @@ class EditSocials extends Component
     public function updateSocials()
     {
         if($this->profile_id){            
-            $profile = Perfil::find($this->profile_id)->first();
+            $profile = Perfil::find($this->profile_id);
             $profile->facebook = $this->facebook;
             $profile->twitter = $this->twitter;
             $profile->dribbble = $this->dribbble;
