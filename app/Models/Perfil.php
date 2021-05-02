@@ -12,10 +12,10 @@ class Perfil extends Model
     protected $table = 'perfiles';
 
     protected $fillable = [
-        'fecha_naciemiento',
+        'fecha_nacimiento',
         'pais',
         'estado',
-        'ciuadad',
+        'ciudad',
         'facebook',
         'twiter',
         'dribbble',
@@ -27,6 +27,11 @@ class Perfil extends Model
 
     public function experts()
     {
-        return $this->belongsTo('App\Models\Expert')->latest();
+        return $this->belongsTo('App\Models\Expert');
+    }
+
+    public function expert()
+    {
+        return $this->belongsTo('App\Models\Expert');
     }
 }

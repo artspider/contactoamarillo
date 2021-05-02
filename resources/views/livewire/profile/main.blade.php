@@ -36,7 +36,10 @@
           </x-icons.habilities>
           <x-icons.location class="text-gray-700">
             @isset($profile->estado)
-            {{ $profile->estado }}, {{ $profile->pais }}
+            {{ $profile->estado }},
+            @endisset
+            @isset($profile->pais)
+            {{ $profile->pais }}
             @endisset
           </x-icons.location>
           <x-icons.contact class="text-gray-700">{{ $expert->email }}</x-icons.contact>

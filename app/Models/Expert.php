@@ -45,6 +45,11 @@ class Expert extends Model
         return $this->hasOne('App\Models\Perfil');
     }
 
+    public function perfil()
+    {
+        return $this->hasOne('App\Models\Perfil');
+    }
+
     public function titulos()
     {
       return $this->hasMany('App\Models\Titulo');

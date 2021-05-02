@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Service extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = [
         'titulo',
@@ -16,7 +17,10 @@ class Service extends Model
         'expert_id',
         'precio',
         'tiempo_de_entrega',
-        'producto_a_entregar'
+        'producto_a_entregar',
+        'descripcion',
+        'clics',
+        'prints','orders'
     ];
 
     public function expert()
