@@ -117,7 +117,7 @@ class Overview extends Component
         $service->precio = 0;
         $service->tiempo_de_entrega = 0;
         $service->producto_a_entregar = "";
-        $service->descripcion = "";
+        $service->descripcion = 'vacio';
         $service->save();
         $this->serviceId = $service->id;
         

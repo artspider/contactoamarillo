@@ -24,6 +24,8 @@
   <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ mix('js/utils.js') }}" defer></script>
@@ -223,8 +225,6 @@
   <script src="{{ mix('js/alpine-functions.js') }}"></script>
   @livewireScripts
   @stack('modals')
-
-
 </body>
 
 </html>

@@ -18,7 +18,7 @@ class Service extends Model
         'precio',
         'tiempo_de_entrega',
         'producto_a_entregar',
-        'descripcion',
+        'descripcion', 
         'clics',
         'prints','orders'
     ];

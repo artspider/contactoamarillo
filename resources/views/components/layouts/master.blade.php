@@ -23,7 +23,10 @@
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
   <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css">
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   @livewireStyles
 
   <!-- Scripts -->

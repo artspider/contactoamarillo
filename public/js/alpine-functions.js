@@ -39,10 +39,21 @@ window.menu2 = menu2;
 
 function togleWireClass(key, elementId) {
   var tag = document.getElementById(elementId);
-  tag.classList.toggle('tagSelected');
+  console.log('en el togleWireClass');
+  console.log(tag);
+  tag.classList.remove('tagSelected');
+  tag.classList.add('bg-gray-600');
+  tag.classList.add('text-gray-100');
 }
 
 window.togleWireClass = togleWireClass;
+
+function initDesc(desc) {
+  var tag = document.getElementById('wysiwyg');
+  tag.contentDocument.body.innerHTML = desc;
+}
+
+window.initDesc = initDesc;
 
 function educationListen() {
   return {
@@ -126,6 +137,8 @@ function ServiceTagListen() {
       console.log('en el togle tag class');
       var tag = document.getElementById(event.target.id);
       console.log(tag);
+      tag.classList.toggle('bg-gray-600');
+      tag.classList.toggle('text-gray-100');
       tag.classList.toggle('tagSelected');
       Livewire.emit('toggletag', key);
     }
@@ -148,10 +161,23 @@ window.CertificationListen = CertificationListen;
 
 function descripcion() {
   return {
-    quillShow: function quillShow() {
-      var delta = quill.container.firstChild.innerHTML;
-      console.log(delta);
-      Livewire.emit('servicedescription', delta);
+    wysiwyg: null,
+    init: function init(el) {
+      // Get el
+      this.wysiwyg = el; // Add CSS
+
+      this.wysiwyg.contentDocument.querySelector('head').innerHTML += "<style>\n        *, ::after, ::before {box-sizing: border-box;}\n        :root {tab-size: 4;}\n        html {line-height: 1.15;text-size-adjust: 100%;}\n        body {margin: 0px; padding: 1rem 0.5rem;}\n        body {font-family: system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\";}\n        </style>";
+      this.wysiwyg.contentDocument.body.innerHTML += "\n        <h1>Hello World!</h1>\n        <p>Welcome to the pure AlpineJS and Tailwind WYSIWYG.</p>\n        "; // Make editable
+
+      this.wysiwyg.contentDocument.designMode = 'on';
+      Livewire.emit('servicedescriptionInit');
+    },
+    format: function format(cmd, param) {
+      this.wysiwyg.contentDocument.execCommand(cmd, !1, param || null);
+    },
+    saveDesc: function saveDesc() {
+      console.log('En el save description');
+      Livewire.emit('servicedescription', this.wysiwyg.contentDocument.body.innerHTML);
     }
   };
 }

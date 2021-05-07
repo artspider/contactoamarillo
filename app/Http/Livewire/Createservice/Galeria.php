@@ -44,7 +44,17 @@ class Galeria extends Component
     }
 
     public function saveIamgenes()
-    {        
+    {    
+        $oldService = Session::has('service') ? Session::get('service') : null;
+        if(isset($oldService)){
+            $this->serviceId = $oldService->id;
+            $this->descripcion = $oldService->descripcion;
+            $this->step =  $oldService->step;
+            
+        }else{
+            //dd('error');
+            $this->emit('error','Debes crear primero tu servicio');
+        }
         $this->updateImages($this->serviceId);
         session()->forget('service');
         $this->emit('success','Se actualizo tu galeria');

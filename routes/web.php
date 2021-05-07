@@ -12,6 +12,7 @@ use App\Http\Livewire\Jobsbag;
 use App\Http\Livewire\Employer\Notificaciones;
 use App\Http\Livewire\Employer\SearchResult;
 use App\Http\Livewire\ShowService;
+use App\Http\Livewire\NewOrder;
 
 Route::get('/', function () {
     return view('welcome');
@@ -100,6 +101,10 @@ Route::middleware(['auth', 'verified'])
 Route::middleware(['auth', 'verified'])
 ->get('employer/searchresult/{search}', SearchResult::class)
 ->name('employer-searchresult');
+
+Route::middleware(['auth', 'verified'])
+->get('employer/neworder/{service_id}', NewOrder::class)
+->name('employer-neworder');
 
 /* Ruta parcial para buscar expert */
 Route::get('/search-expert', function () {

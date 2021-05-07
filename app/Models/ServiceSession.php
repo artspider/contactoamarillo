@@ -40,7 +40,7 @@ class ServiceSession {
             $this->precio = null;
             $this->tiempo_de_entrega = null;
             $this->producto_a_entregar = null;
-            $this->descripcion = null;
+            $this->descripcion = "";
             $this->step = 1;
         }
     }

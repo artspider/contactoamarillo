@@ -23,11 +23,11 @@
                 name="clasificacion" id="clasificacion" placeholder="Selecciona una categoria">
                 <option value=" ">Selecciona una categoria</option>
                 @isset($categorias)
-                    @foreach ($categorias as $categoria)
-                        <option value=" {{ $categoria['id'] }}  ">
-                            {{ $categoria['nombre'] }}
-                        </option>
-                    @endforeach
+                @foreach ($categorias as $categoria)
+                <option value=" {{ $categoria['id'] }}  ">
+                    {{ $categoria['nombre'] }}
+                </option>
+                @endforeach
                 @endisset
             </select>
 
@@ -36,26 +36,28 @@
                 name="clasificacion" id="clasificacion" placeholder="Selecciona una Subcategoria">
                 <option value=" ">Selecciona una subcategoria</option>
                 @isset($subcategorias) @foreach ($subcategorias as $subcategoria)
-                    <option value=" {{ $subcategoria['id'] }}  ">
-                        {{ $subcategoria['name'] }}
-                    </option>
+                <option value=" {{ $subcategoria['id'] }}  ">
+                    {{ $subcategoria['name'] }}
+                </option>
                 @endforeach @endisset
             </select>
         </div>
 
         @isset($servicetags)
-            <p class="pt-4">Selecciona hasta 5 etiquetas</p>
-            <div x-data="ServiceTagListen()" class="my-4">
-                @foreach ($servicetags as $tag)
-                    <x-contacto-amarillo.contacto-pill wire:ignore id="tag{{ $tag['id'] }}"
-                        x-on:click="togleTagClass({{ $tag['id'] }},event)" class="mb-2 cursor-pointer hover:bg-gray-500">
-                        {{ $tag['name'] }}
-                    </x-contacto-amarillo.contacto-pill>
-                @endforeach
-            </div>
-            <div class="my-4 text-sm font-semibold text-red-500">
-                @error('arraytags') <span class=" error">{{ $message }}</span> @enderror
-            </div>
+        <p class="pt-4">Selecciona hasta 5 etiquetas</p>
+        <div x-data="ServiceTagListen()" class="my-4">
+            @foreach ($servicetags as $tag)
+            <x-contacto-amarillo.contacto-pill wire:ignore id="tag{{ $tag['id'] }}"
+                x-on:click="togleTagClass($event.currentTarget.getAttribute('pk'),event)" pk="{{ $tag['id'] }}"
+                class="mb-2 cursor-pointer hover:bg-gray-500">
+
+                {{ $tag['name'] }}
+            </x-contacto-amarillo.contacto-pill>
+            @endforeach
+        </div>
+        <div class="my-4 text-sm font-semibold text-red-500">
+            @error('arraytags') <span class=" error">{{ $message }}</span> @enderror
+        </div>
         @endisset
         <div class="flex justify-end">
             <x-button wire:click="saveOverview" class="mt-4">Guardar & Continuar</x-button>
@@ -63,10 +65,11 @@
     </x-contacto-amarillo.contacto-card>
 </div>
 @push('modals')
-    <script>
-        Livewire.on('subcatselected', idinview => {
+<script>
+    Livewire.on('subcatselected', idinview => {
             thisid = idinview;
             elementId = "tag" + idinview;
+            console.log("emite");
             togleWireClass(thisid, elementId);
         });
 
@@ -86,5 +89,5 @@
             });
         })
 
-    </script>
+</script>
 @endpush
