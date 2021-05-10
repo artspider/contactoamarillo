@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
-class activity extends Model
+class Activity extends Model
 {
     use HasFactory;
 
