@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 
 class Activity extends Model
 {
-    use HasFactory;
 
     protected $fillable = [
         'message',
