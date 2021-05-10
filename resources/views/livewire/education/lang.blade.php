@@ -37,7 +37,7 @@
                 @endforeach
             </select>
             <button {{ $isDisbledBtn }} wire:click="addLanguage"
-                class="btn ml-2 focus:outline-none text-green-500 hover:text-green-600" type="submit">
+                class="btn ml-2 focus:outline-none text-gray-800 hover:text-gyay-600" type="submit">
 
                 <svg class="fill-current  w-6 h-6" viewBox="0 0 24 24">
                     <path

@@ -29,7 +29,7 @@
 
     <div x-data="{}" x-cloak class="py-12">
         <section id="education"
-            class="profile__body max-w-7xl my-4 grid grid-cols-2 grid-rows-4 gap-4 mx-auto sm:px-6 lg:px-8">
+            class="profile__body max-w-7xl my-4 flex flex-col lg:grid grid-cols-2 gap-4 mx-auto sm:px-6 lg:px-8">
             <article class="education__language text-sm lg:text-xl">
                 <livewire:education.lang />
                 <div class="mx-auto text-sm lg:text-xl mt-8">

@@ -10,9 +10,9 @@
                 name="" id="">
                 <option value=" ">Tiempo de entrega</option>
                 @isset($tiempoDeEntregaData) @foreach ($tiempoDeEntregaData as $tiempoDeEntrega)
-                    <option value=" {{ $tiempoDeEntrega }}  ">
-                        {{ $tiempoDeEntrega }}
-                    </option>
+                <option value=" {{ $tiempoDeEntrega }}  ">
+                    {{ $tiempoDeEntrega }}
+                </option>
                 @endforeach @endisset
             </select>
         </div>
@@ -38,8 +38,17 @@
             <p class="text-base text-gray-800 font-semibold uppercase mr-4 w-1/3">
                 Precio
             </p>
-            <input wire:model="precio" class="fit-input w-2/3" type="number" step="5" min="5" max="10000" value=""
-                placeholder="$" />
+            {{-- <input wire:model="precio" class="fit-input w-2/3" type="number" step="5" min="5" max="10000" value=""
+                placeholder="$" /> --}}
+
+            <div class="relative items-center border border-gray-900 focus:border-transparent w-2/3">
+                <p class="absolute top-3 left-5">$</p>
+                <input wire:model="precio"
+                    class="pl-8 fit-input w-full border border-transparent focus:border-transparent 
+                        focus:ring-2 focus:ring-yellow-300 focus:outline-none focus:shadow-none focus:border-0 focus:bg-transparent"
+                    type="number" step="5" min="5" max="10000" value="" placeholder="$" />
+                <p class="absolute top-3 right-10">MXN</p>
+            </div>
         </div>
         <div class="my-4 text-sm font-semibold text-red-500">
             @error('precio') <span class="error">{{ $message }}</span> @enderror

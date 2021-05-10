@@ -39,7 +39,12 @@ class Notificaciones extends Component
             $this->selected = $this->contacts[$id];
             logger($this->selected);
             $this->messages = DB::table('messages')->where('expert_id','=',$this->selected->id)->where('employer_id','=',$this->employer->id)->get();
-            
+            $unreadMessages = $this->employer->messages()->where('expert_id',$this->selected->id)->where('status',0)->get()->where('sender',2);
+            foreach($unreadMessages as $unreadMessage)
+            {
+                $unreadMessage->status = 1;
+                $unreadMessage->save();
+            }
         };
     }
 
@@ -47,7 +52,7 @@ class Notificaciones extends Component
     {
         $user = Auth::user();
         $this->employer = $user->usable;
-        $this->updateData(0);             
+        $this->updateData(0);       
     }
 
     public function render()

@@ -1,8 +1,13 @@
 <div class="hidden lg:block w-1000">
     <ul class="flex text-white font-bold justify-around items-center">
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/dashboard">Inicio</a></li>
-        <li class="hover:underline hover:text-main-yellow"><a
-                href="/employer/notifications/{{Auth::user()->usable->id}}">Notificaciones</a></li>
+        <li class="hover:underline hover:text-main-yellow">
+            <div class="flex items-center">
+                <a href="/employer/notifications/{{Auth::user()->usable->id}}">Notificaciones</a>
+                <livewire:show-unread />
+            </div>
+
+        </li>
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/publishproject">Publicar proyecto</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/showprojects">Proyectos</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/search-expert">Buscar experto</a></li>

@@ -92,18 +92,20 @@
               <li class="clearfix2">
                 <div class="w-full flex justify-start">
                   <div class="bg-gray-100 rounded px-5 py-2 my-2 text-gray-700 relative" style="max-width: 300px;">
-                    <span class="block">
+                    yo:
+                    <span class="block text-left">
                       {{$message->descripcion}}</span>
-                    <span class="block text-xs text-right">10:30pm</span>
+                    <span class="block text-xs text-left">{{$message->created_at}}</span>
                   </div>
                 </div>
               </li>
               @else
               <div class="w-full flex justify-end">
                 <div class="bg-gray-100 rounded px-5 py-2 my-2 text-gray-700 relative" style="max-width: 300px;">
-                  <span class="block">
+                  {{$employerName[0]}}:
+                  <span class="block text-right">
                     {{$message->descripcion}}</span>
-                  <span class="block text-xs text-left">10:32pm</span>
+                  <span class="block text-xs text-right ">{{$message->created_at}}</span>
                 </div>
               </div>
               @endif

@@ -74,6 +74,12 @@ class CertificationComponent extends Component
         $certification->url = $this->url;
         $certification->expert_id = $this->expert_id;
         $certification->save();
+
+        $this->certificado = "";
+        $this->emisor = "";
+        $this->anio = "";
+        $this->url = "";
+
         $this->updateCertificaciones();
         $this->emit('success', 'Se actualizaron tus datos');
     }

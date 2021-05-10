@@ -11,6 +11,11 @@ class Message extends Model
 
     protected $guarded = [];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
     public function employer()
     {
         return $this->belongsTo('App\Models\Employer');

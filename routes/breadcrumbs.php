@@ -44,3 +44,13 @@ Breadcrumbs::for('jobsbag', function ($trail) {
     $trail->parent('dashboard');
     $trail->push('Jobs Bag', route('jobsbag'));
 });
+
+Breadcrumbs::for('showorders', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Show Orders', route('expert-showorders'));
+});
+
+Breadcrumbs::for('showorder', function ($trail,$id) {
+    $trail->parent('showorders');
+    $trail->push('Show Order', route('expert-showorder', $id));
+});

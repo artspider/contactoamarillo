@@ -261,14 +261,14 @@ html {
 /* Border */
 
 .borderninguno {
-        border-style: none!important;
-        border-color: Transparent!important;
-        overflow: auto!important;
-        outline: none!important;
+  border-style: none !important;
+  border-color: Transparent !important;
+  overflow: auto !important;
+  outline: none !important;
 }
 
 textarea:focus {
-  outline: none!important;
+  outline: none !important;
 }
 
 /* viewport inherit size from carousel */
@@ -737,6 +737,7 @@ hr:last-child {
   background: transparent;
 }
 
+input:focus,
 button:focus {
   outline: none !important;
   box-shadow: none;

@@ -16,6 +16,8 @@ class Showprojects extends Component
     public $projects;
     public $orders;
 
+    protected $listeners = ['deleteProject'];
+
     public function updateProjects()
     {
         $user = Auth::user();
@@ -36,5 +38,17 @@ class Showprojects extends Component
             'orders' => $this->orders
         ])
         ->layout('components.contacto-amarillo.employer-layout');
+    }
+
+    public function deleteProject($key)
+    {
+        $project = Proyect::find($key);
+        try{
+            $project->delete();
+            $this->emit('success','Se elimino tu registro');
+            $this->updateProjects();  
+        }catch(\Exception $e){
+            $this->emit('error','No se pudo eliminar el registro');
+        }
     }
 }

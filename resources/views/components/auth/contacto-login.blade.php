@@ -1,5 +1,5 @@
 <x-contacto-amarillo.contacto-guest title="Login">
-    <div class="container mx-auto mt-44 ">
+    <div class="container mx-auto mt-20 mb-20 lg:my-44 ">
         <div class="flex flex-wrap justify-center mx-6">
             <div class="w-full max-w-sm ">
                 <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
@@ -56,5 +56,5 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </x-contacto-amarillo.contacto-guest>

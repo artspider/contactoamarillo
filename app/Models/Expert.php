@@ -16,9 +16,14 @@ class Expert extends Model
   ];
 
   public function orders()
-    {
+  {
         return $this->hasMany('App\Models\Order')->latest();
-    }
+  }
+
+  public function sortorders()
+  {
+    return $this->hasMany('App\Models\Order')->orderBy('fecha_entrega', 'asc');
+  }
 
     public function tags()
     {

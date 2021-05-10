@@ -23,6 +23,7 @@ class Notificaciones extends Component
     public $employerId;
     public $expertId;
     public $selected;
+    public $employerName;
 
     public function updateData($id)
     {
@@ -39,6 +40,8 @@ class Notificaciones extends Component
         {
             $this->contacts = $arr_contacts;
             $this->selected = $this->contacts[$id];
+            $employer = Employer::find($this->selected->id);
+            $this->employerName = explode(" ",$employer->nombre);
             logger($this->selected);
             $this->messages = DB::table('messages')->where('employer_id','=',$this->selected->id)->where('expert_id','=',$this->expert->id)->get();
             

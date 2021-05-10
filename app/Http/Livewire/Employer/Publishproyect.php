@@ -26,6 +26,7 @@ class Publishproyect extends Component
     public $delivery_time;
     public $budget;
     public $status;
+    public $smodal=false;
 
     protected $rules = [
         'description' => 'required|min:15',
@@ -94,12 +95,17 @@ class Publishproyect extends Component
         $proyect->employer_id = $employer->id;
 
         $proyect->save();
-        $this->emit('success', 'Se creo y publico tu proyecto');
+        //$this->emit('success', 'Se creo y publico tu proyecto');
         $this->description = "";
         $this->delivery_time = 7;
         $this->budget = null;
         $this->categoriaId = null;
         $this->subcategoriaId = null;
-        
+        $this->smodal = true;
+    }
+
+    public function sendMsgAndClose()
+    {
+        return redirect()->to('/employer/showprojects');
     }
 }

@@ -22,6 +22,7 @@ class NewOrder extends Component
     public $message;
     public $fecha_entrega;
     public $dias;
+    public $smodal = false;
 
     protected $messages = [
         'title.required' => 'Debes colocar un título a esta orden.',
@@ -66,6 +67,28 @@ class NewOrder extends Component
         $order->ok_expert = 0;
         $order->ok_employer = 1;
         $order->service_id = $this->service->id;
-        $order->save();
+        if($order->save())
+        {
+            $this->smodal = true;
+        }else{
+            $this->emit('error','Algo sali mal, favor de intentar otra vez');
+        }
+        
+    }
+
+    public function sendMsgAndClose()
+    {
+        $expertName = explode(' ',$this->expert->nombre);
+        $newMessage = new Message;
+        $newMessage->descripcion = "Hola " . $expertName[0] . " he contratado uno de tus servicios. Consulta tu bandeja de proyectos para más información";
+        
+        $newMessage->fecha_entrega = carbon::now();
+        
+        $newMessage->employer_id = $this->employer->id;
+        $newMessage->expert_id = $this->expert->id;
+        $newMessage->sender = 1;
+        $newMessage->save();
+
+        return redirect()->to('/employer/showprojects');
     }
 }

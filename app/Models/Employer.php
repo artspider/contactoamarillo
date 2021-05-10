@@ -32,4 +32,6 @@ class Employer extends Model
     {
       return $this->hasMany('App\Models\Message');
     }
+
+    
 }

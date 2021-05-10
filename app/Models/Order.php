@@ -13,6 +13,10 @@ class Order extends Model
     'descripcion', 'titulo', 'status', 'fecha_entrega', 'precio_acordado', 'calificacion_empleador', 'calificacion_experto', 'resena', 'expert_id', 'employer_id', 'ok_expert', 'ok_employer',
   ];
 
+  protected $dates = [
+    'created_at',
+  ];
+
     public function expert()
     {
         return $this->belongsTo('App\Models\Expert');
@@ -77,6 +81,7 @@ class Order extends Model
         1 => 'EN MARCHA',
         2 => 'TERMINADO',
         4 => 'CANCELADO',
+        5 => 'DEVUELTO',
       ];
 
       return $statusMap[$this->status];
@@ -92,6 +97,11 @@ class Order extends Model
 
     public function employers(){
       $this->hasOne('App\Models\Employer');
+    }
+
+    public function activities()
+    {
+        return $this->hasMany('App\Models\Activity')->oldest();
     }
 
 }
