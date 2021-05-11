@@ -104,4 +104,9 @@ class Order extends Model
         return $this->hasMany('App\Models\Activity')->oldest();
     }
 
+    public function adjuntos()
+    {
+        return $this->hasMany('App\Models\Adjunto');
+    }
+
 }

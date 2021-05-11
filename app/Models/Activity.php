@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Activity extends Model
+class Activity extends Model implements HasMedia
 {
+    use InteractsWithMedia;
 
     protected $fillable = [
         'message',
@@ -27,4 +30,8 @@ class Activity extends Model
         $order_date = Carbon::parse($this->created_at);
         return $order_date->isoFormat('D MMMM YYYY, h:mm a');
       }
+    
+    public function attachments(){
+        return $this->hasMany('App\Models\Attachment');
+    }
 }
