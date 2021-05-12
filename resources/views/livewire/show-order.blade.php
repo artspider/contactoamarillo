@@ -10,7 +10,7 @@
 
   {{ Breadcrumbs::render('showorder', $order->id) }}
 
-  <div x-cloak x-data="{tab:'3'}">
+  <div x-cloak x-data="{tab: @entangle('tab')}">
 
     <div class="flex pt-12 profile__body max-w-7xl  mx-auto sm:px-6 mb-0">
       <div x-on:click="tab='1'" :class="{ 'bg-gray-800 text-white': tab == '1' }"
@@ -51,6 +51,12 @@
               </x-order.deliverit>
               @forelse ($activitiesm as $activity)
 
+              @if(explode(" ",$activity->message)[0] == 'DeliveritNow:')
+              <div class="ml-16 text-right inline-block border border-gray-200 w-11/12 my-4"></div>
+              <x-order.finish>
+                {{$activity->message}}
+              </x-order.finish>
+              @else
               <div class="ml-16 text-right inline-block border border-gray-200 w-11/12 my-4"></div>
               @if ($activity->sender == 1)
               <x-order.message who="{{$order->employer->nombre}}"
@@ -58,14 +64,14 @@
                 photo="{{ $order->employer->users->profile_photo_url }}">
                 {{$activity->message}}
               </x-order.message>
-
-
               @else
               <x-order.message who="Yo"
                 dateSend="{{ \Carbon\Carbon::parse($activity->created_at)->isoFormat('D MMMM YYYY, h:mm a') }}"
                 photo="{{ Auth::user()->profile_photo_url }}">
                 {{$activity->message}}
               </x-order.message>
+              @endif
+
 
               @endif
 
@@ -171,7 +177,8 @@
                     type="file" name="" id="fileToSend" class="hidden">
 
                   <div class="relative flex w-1/2">
-                    <input wire:model="filenameToSend"
+                    <input wire:model="filenameToSend" x-on:keydown.space="return false"
+                      onkeypress="return /[a-zA-Z0-9_]/i.test(event.key)"
                       class="h-16 w-full pr-10 bg-purple-100 rounded-md shadow-md border border-transparent focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       type="text" name="" id="filenameToSend" placeholder="Escribe el título del archivo adjunto">
                     <svg class="w-6 h-6 fill-current absolute top-5 right-3 text-purple-600 cursor-pointer "
@@ -181,7 +188,7 @@
                         d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.094l-4.157-4.104 4.1-4.141-1.849-1.849-4.105 4.159-4.156-4.102-1.833 1.834 4.161 4.12-4.104 4.157 1.834 1.832 4.118-4.159 4.143 4.102 1.848-1.849z" />
                     </svg>
                   </div>
-                  <x-contacto-amarillo.contacto-button color="gray" wire:click="entregaAttach"
+                  <x-contacto-amarillo.contacto-button color="gray" wire:click="entregaAttach" x-on:click="boxfile=null"
                     class="ml-6 w-1/4 h-16 pl-12">
                     <x-slot name="is_disabled">
                       {{$filenameToSendButton}}
@@ -211,6 +218,12 @@
           <div class="col-span-3 flex flex-col w-full">
             <div class="w-full bg-white mb-5 rounded-md shadow-md p-8">
               <p class="text-lg font-semibold tracking-wide">Arcvhivos Adjuntos en esta entrega</p>
+              <livewire:show-entrega :id="$order->id" />
+              <div class="flex justify-end mt-4">
+                <x-contacto-amarillo.contacto-button color="gray" wire:click="saveDelivery">
+                  entregar
+                </x-contacto-amarillo.contacto-button>
+              </div>
             </div>
           </div>
         </x-contacto-amarillo.contacto-container>
@@ -220,6 +233,22 @@
 
 
   </div>
+  @push('modals')
   <script>
+    Livewire.on('success', (message) => {
+    thimsg = message
+    Toast.fire({
+      icon: 'success',
+      title: thimsg,
+    })
+  })
 
+  Livewire.on('error', (message) => {
+    thimsg = message
+    Toast.fire({
+      icon: 'error',
+      title: thimsg,
+    })
+  })
   </script>
+  @endpush

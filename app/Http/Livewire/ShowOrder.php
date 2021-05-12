@@ -6,13 +6,13 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Support\Facades\Storage;
 
-use App\Models\Expert;
-use App\Models\Order;
 use App\Models\Activity;
 use App\Models\Adjunto;
+use App\Models\Entrega;
+use App\Models\Expert;
+use App\Models\Order;
 
 use Livewire\WithFileUploads;
 
@@ -20,17 +20,19 @@ class ShowOrder extends Component
 {
     use WithFileUploads;
 
-    public $order;
-    public $deliver_date;
     public $activities;
     public $activitiesm;
-    public $message;
-    public $is_disabled="disabled";
-    public $filenameToSendButton="disabled";
-    public $attachments;
+    public $attachments;    
     public $boxfile=null;
+    public $delivery_number;
+    public $deliver_date;
     public $fileToSend;
     public $filenameToSend;
+    public $filenameToSendButton="disabled";    
+    public $is_disabled="disabled";
+    public $message;
+    public $order;
+    public $tab=1;
 
     protected $listeners = ['fileToSend'];
 
@@ -52,6 +54,7 @@ class ShowOrder extends Component
     {
         $this->order = Order::find($id);
         $this->deliver_date = Carbon::createFromDate($this->order->fecha_entrega)->isoFormat('D MMMM YYYY');
+        $this->delivery_number = $this->order->entrega + 1;
         $this->updateData();
     }
 
@@ -96,16 +99,28 @@ class ShowOrder extends Component
     }
 
     public function entregaAttach()
-    {
+    {        
         if(!empty($this->fileToSend)){
-          $attach = $fileToSend->store('attachments','public');
+          $attach = $this->fileToSend->store('attachments','public');
           $newDelivery = new Entrega;
           $newDelivery->ruta = str_replace("public","storage", $attach);
           $newDelivery->order_id = $this->order->id;
-          $newDelivery->filename = 'File'.$this->order->id. $newActivity->id.'.'.$attachment->extension();
+          if(isset(pathinfo($this->filenameToSend)['extension'])){
+              //tiene extension
+              $newDelivery->filename = $this->filenameToSend;
+          }else if(!isset(pathinfo($this->filenameToSend)['extension'])){
+               //no tiene extension
+                $path_info = pathinfo($attach);
+                $newDelivery->filename = $this->filenameToSend.'.'.$path_info['extension'];
+          }
+          $newDelivery->message = "";
+          $newDelivery->entrega = $this->delivery_number;
           $newDelivery->save();
         }
-        $this->emit('newAttachment',$this->order->id); 
+        $this->fileToSend = null;
+        $this->filenameToSend = "";
+        $this->filenameToSendButton = "disabled";
+        $this->emit('newDelivery',$this->order->id); 
     }
 
     public function updatedMessage()
@@ -118,11 +133,38 @@ class ShowOrder extends Component
         }
     }
 
-    public function cleanInputfileToSend()
+    public function updatedFilenameToSend()
     {
-        
+        if(strlen($this->filenameToSend) < 1 || empty($this->fileToSend)){
+            $this->filenameToSendButton="disabled";
+        }else{
+            $this->filenameToSendButton="enabled";
+        }
+    }
+
+    public function cleanInputfileToSend()
+    {        
         $this->fileToSend = null;
         $this->filenameToSend = "";
         $this->filenameToSendButton = "disabled";
+    }
+
+    public function saveDelivery(){
+        $this->order->entrega = $this->delivery_number;
+        $this->order->save();
+
+        $newActivity = new Activity;
+        $newActivity->message = "DeliveritNow: ¡Se ha hecho una entrega! Ve al apartado de entregas y revisa lo que se te ha enviado. La orden se marcará como completada en 3 días.";
+        $newActivity->order_id = $this->order->id;        
+        $newActivity->sender = 2; //El experto envía mensaje
+        $result = $newActivity->save();
+
+        if($result){
+            $message = Activity::latest()->first();
+            $this->updateData();
+        }
+
+        $this->emit('success', '¡Has realizado la entrega satisfactoriamente!');
+        $this->tab=1;
     }
 }

@@ -29,7 +29,15 @@ class Activity extends Model implements HasMedia
     public function getShortDateAttribute(){
         $order_date = Carbon::parse($this->created_at);
         return $order_date->isoFormat('D MMMM YYYY, h:mm a');
-      }
+    }
+    
+    public function getIsDeliveryAttribute(){
+        $message = explode(" ", $this->message);
+        if($message == 'DeliveritNow:'){
+            return true;
+        }
+        return false;
+    }
     
     public function attachments(){
         return $this->hasMany('App\Models\Attachment');
