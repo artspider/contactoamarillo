@@ -6,7 +6,7 @@
         </svg>
     </div>
     <div class="">
-        <p class="text-gray-900 text-base font-bold tracking-wide">¡Se ha hecho una entrega!
+        <p class="text-gray-900 text-base font-bold tracking-wide">¡Has cerrado la orden!
             <span class="text-gray-700 text-base font-normal font-serif italic">{{$dateSend}}</span>
         </p>
         <p class="ml-2 text-gray-700 text-base font-serif italic">{{$slot}}</p>

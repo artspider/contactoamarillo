@@ -3,8 +3,10 @@
     "/js/sweetmessages.js": "/js/sweetmessages.js",
     "/js/alpine-functions.js": "/js/alpine-functions.js",
     "/js/utils.js": "/js/utils.js",
+    "/js/algolia.js": "/js/algolia.js",
     "/js/filepond.js": "/js/filepond.js",
     "/js/dropzone.js": "/js/dropzone.js",
+    "/css/algolia.css": "/css/algolia.css",
     "/css/filepond.css": "/css/filepond.css",
     "/css/dropzone.css": "/css/dropzone.css",
     "/css/app.css": "/css/app.css"

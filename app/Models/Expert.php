@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
-
+use Laravel\Scout\Searchable;
 
 class Expert extends Model
 {
-    use Notifiable;
+    use Notifiable,
+        Searchable;
 
     //
     protected $fillable = [
@@ -87,6 +88,12 @@ class Expert extends Model
                    ->orWhere('especialidad', 'LIKE', "%$profesion%");
     }
 
+    public function scopeEspecialidad($query, $especialidad)
+    {
+      if($especialidad)
+        return $query->where('especialidad', 'LIKE', "%$especialidad%");
+    }
+
     public function scopeCiudad($query, $ciudad)
     {
       if($ciudad)
@@ -97,4 +104,5 @@ class Expert extends Model
     {
       return $this->hasMany('App\Models\Message');
     }
+
 }

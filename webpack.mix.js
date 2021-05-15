@@ -16,6 +16,7 @@ mix
   .js('resources/js/sweetmessages.js', 'public/js')
   .js('resources/js/alpine-functions.js', 'public/js')
   .js('resources/js/utils.js', 'public/js')
+  .js('resources/js/algolia.js', 'public/js')
   .js('resources/js/filepond.js', 'public/js')
   .js('resources/js/dropzone/dropzone.js', 'public/js')
   .postCss('resources/css/app.css', 'public/css', [
@@ -25,6 +26,7 @@ mix
   ])
   .postCss('resources/css/dropzone.css', 'public/css')
   .postCss('resources/css/filepond.css', 'public/css')
+  .postCss('resources/css/algolia.css', 'public/css')
   .browserSync({
     proxy: 'localhost:8000',
     files: ['app/**/*', 'resources/views/**/*', 'routes/**/*'],

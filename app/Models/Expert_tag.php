@@ -12,4 +12,6 @@ class Expert_Tag extends Model
   protected $fillable = [
     'expert_id', 'tag_id',
   ];
+
+  
 }

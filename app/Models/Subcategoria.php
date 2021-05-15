@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use Illuminate\Support\Collection;
 
 class Subcategoria extends Model
 {
@@ -32,4 +33,5 @@ class Subcategoria extends Model
     {
         return $this->belongsTo('App\Models\Categoria');
     }
+
 }

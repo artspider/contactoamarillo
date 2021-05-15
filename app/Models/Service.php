@@ -60,7 +60,7 @@ class Service extends Model
 
     public function orders()
     {
-        return $belongsTo('App\Models\Order');
+        return $this->$hasMany('App\Models\Order');
     }
 
 }

@@ -11,7 +11,7 @@
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/publishproject">Publicar proyecto</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/employer/showprojects">Proyectos</a></li>
         <li class="hover:underline hover:text-main-yellow"><a href="/search-expert">Buscar experto</a></li>
-        <li class="hover:underline hover:text-main-yellow"><a href="{{ route("profile.show") }}">Cuenta</a></li>
+        <li class="hover:underline hover:text-main-yellow"><a href="{{ route("employer-showprofile") }}">Cuenta</a></li>
         <li class="border-white border px-3 py-2 rounded-md hover:bg-white hover:text-black">
             <!-- Logout -->
 

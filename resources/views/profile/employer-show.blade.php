@@ -1,10 +1,10 @@
-<x-layouts.master title="Perfil">
+<x-contacto-amarillo.employer-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Perfil') }}
         </h2>
     </x-slot>
-    {{ Breadcrumbs::render('UserProfile') }}
+    {{-- {{ Breadcrumbs::render('UserProfile') }} --}}
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @if (Laravel\Fortify\Features::canUpdateProfileInformation())
@@ -42,4 +42,4 @@
             @endif
         </div>
     </div>
-</x-layouts.master>
+</x-contacto-amarillo.employer-layout>

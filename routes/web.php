@@ -125,11 +125,21 @@ Route::middleware(['auth', 'verified'])
 ->get('employer/neworder/{service_id}', NewOrder::class)
 ->name('employer-neworder');
 
+Route::middleware(['auth', 'verified'])
+->get('employer/showorder/{id}', App\Http\Livewire\Employer\ShowOrder::class)
+->name('employer-showorder');
+
+Route::get('employer/show-profile', function () {
+    return view('profile/employer-show');
+})->middleware(['auth','verified'])->name('employer-showprofile');
+
 /* Ruta parcial para buscar expert */
 Route::get('/search-expert', function () {
     return view('components.employer.searchEmployer');
 });
 
-
+Route::middleware(['auth', 'verified'])
+->get('employer/search-expert', App\Http\Livewire\AlgoliaSearch::class)
+->name('employer-searchexpert');
 
 require __DIR__.'/auth.php';

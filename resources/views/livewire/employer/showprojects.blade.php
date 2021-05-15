@@ -141,15 +141,17 @@
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
                       @forelse ($orders as $order)
-                      <tr>
+                      <tr class="hover:bg-gray-200">
                         <td class="px-2 py-4 whitespace-nowrap">
-                          <div class="ml-4">
-                            <div class="text-sm font-medium text-gray-900">
+                          <a href="showorder/{{$order->id}}">
+                            <div class="ml-4">
+                              <div class="text-sm font-medium text-gray-900">
 
-                              {{\Illuminate\Support\Str::limit($order->titulo, 45)}}
+                                {{\Illuminate\Support\Str::limit($order->titulo, 45)}}
+                              </div>
+
                             </div>
-
-                          </div>
+                          </a>
                         </td>
                         <td class="px-3 py-4 whitespace-nowrap">
                           <div class="text-sm text-gray-900">

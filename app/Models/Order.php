@@ -27,6 +27,11 @@ class Order extends Model
         return $this->belongsTo('App\Models\Employer');
     }
 
+    public function getShortDateAttribute(){
+      $order_date = Carbon::parse($this->fecha_entrega);
+      return $order_date->isoFormat('D MMMM YYYY');
+    }
+
     public function getDayNameAttribute(){
       $weekMap = [
         0 => 'DOM ',
@@ -79,24 +84,22 @@ class Order extends Model
       $statusMap = [
         0 => 'PENDIENTE',
         1 => 'EN MARCHA',
-        2 => 'TERMINADO',
+        2 => 'ENTREGADO',
+        3 => 'EN REVISION',
         4 => 'CANCELADO',
         5 => 'DEVUELTO',
+        6 => 'ACEPTADO'
       ];
 
       return $statusMap[$this->status];
     }
 
-    public function services(){
-      $this->hasOne('App\Models\Service');
-    }
-
     public function experts(){
-      $this->hasOne('App\Models\Expert');
+      return $this->hasOne('App\Models\Expert');
     }
 
     public function employers(){
-      $this->hasOne('App\Models\Employer');
+      return $this->hasOne('App\Models\Employer');
     }
 
     public function activities()
@@ -112,6 +115,10 @@ class Order extends Model
     public function adjuntos()
     {
         return $this->hasMany('App\Models\Adjunto');
+    }
+
+    public function service(){
+      return $this->belongsTo('App\Models\Service');
     }
 
 }

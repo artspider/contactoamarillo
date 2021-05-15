@@ -22,10 +22,12 @@
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
   <link href="{{ mix('css/dropzone.css') }}" rel="stylesheet" />
+  <link href="{{ mix('css/algolia.css') }}" rel="stylesheet" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   <!-- Scripts -->
   <script src="{{ mix('js/app.js') }}" defer></script>
   <script src="{{ mix('js/utils.js') }}" defer></script>
@@ -223,6 +225,13 @@
   <x-contacto-amarillo.contacto-footer />
 
   <script src="{{ mix('js/alpine-functions.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"
+    integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js"
+    integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous">
+  </script>
+  <script src="{{ mix('js/algolia.js') }}"></script>
   @livewireScripts
   @stack('modals')
 </body>
