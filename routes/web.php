@@ -25,35 +25,35 @@ Route::get('/', function () {
     return view('components.contacto-amarillo.contacto-dashboard');
 })->middleware(['auth','verified'])->name('dashboard'); */
 
-Route::middleware(['auth'])
+Route::middleware(['auth','verified'])
 ->get('/dashboard', App\Http\Livewire\Dashboard::class)
 ->name('dashboard');
 
 Route::get('/education', function () {
     return view('experts.education');
-})->middleware(['auth'])->name('education');
+})->middleware(['auth','verified'])->name('education');
 
 Route::get('/services', function () {
     return view('experts.services');
-})->middleware(['auth'])->name('services');
+})->middleware(['auth','verified'])->name('services');
 
 Route::get('/ability', function () {
     return view('experts.ability');
-})->middleware(['auth'])->name('ability');
+})->middleware(['auth','verified'])->name('ability');
 
 Route::get('/createservice', function () {
     return view('experts.createservice');
-})->middleware(['auth'])->name('createservice');
+})->middleware(['auth','verified'])->name('createservice');
 
 Route::get('/editservice/{id}', function ($id) {
     return view('experts.editservice',['id' => $id]);
-})->middleware(['auth'])->name('editservice');
+})->middleware(['auth','verified'])->name('editservice');
 
-Route::middleware(['auth'])
+Route::middleware(['auth','verified'])
 ->get('/profile', Main::class)
 ->name('profile');
 
-Route::middleware(['auth'])
+Route::middleware(['auth','verified'])
 ->get('/expert-profile/{id}', ExpertDetail::class)
 ->name('expert-profile');
 

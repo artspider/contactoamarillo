@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>
         @isset($title)
-            {{ $title }} -
+        {{ $title }} -
         @endisset
         {{ config('app.name', 'Contacto-Amarillo') }}
     </title>
@@ -49,8 +49,14 @@
             </div>
         </header>
         {{ $slot }}
-        <x-contacto-amarillo.contacto-footer />
+
     </div>
+    <x-contacto-amarillo.contacto-footer />
+    <!-- Scripts -->
+    <script src="{{ mix('js/alpine-functions.js') }}"></script>
+    @livewireScripts
+    @stack('modals')
+    <!-- -->
 </body>
 
 </html>
