@@ -34,7 +34,7 @@
             <div class="flex flex-row flex-wrap justify-between w-11/12 mx-auto">
                 @isset($services)
                 @foreach ($services as $service)
-                <x-employer.categorias.cardItem2>
+                <x-employer.categorias.cardItem2 ruta="/expert/showservice/{{$service->id}}">
                     <x-slot name="srcImage">
                         @isset($service->imagenes()->first()->ruta)
 

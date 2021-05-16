@@ -142,4 +142,8 @@ Route::middleware(['auth', 'verified'])
 ->get('employer/search-expert', App\Http\Livewire\AlgoliaSearch::class)
 ->name('employer-searchexpert');
 
+Route::middleware(['auth', 'verified'])
+->get('employer/profile-expert/{id}', App\Http\Livewire\ProfileExpert::class)
+->name('employer-profileexpert');
+
 require __DIR__.'/auth.php';

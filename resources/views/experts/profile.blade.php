@@ -18,4 +18,4 @@
     @push('modals')
 
     @endpush
-    </x-contacto-amarillo.contacto-layout>
+</x-layouts.master>
