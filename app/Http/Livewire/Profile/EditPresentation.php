@@ -55,7 +55,7 @@ class EditPresentation extends Component
     public function updatePresentation()
     {
         if($this->profile_id){            
-            $profile = Perfil::find($this->profile_id)->first();
+            $profile = Perfil::find($this->profile_id);
             $profile->quien_soy = $this->quien_soy;
         }else{
             $profile = new Perfil();
