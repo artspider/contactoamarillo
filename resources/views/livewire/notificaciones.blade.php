@@ -118,6 +118,7 @@
           </div>
 
           <!-- Enviar mensaje y Attachments -->
+          @isset($selected)
           <div class="w-full py-3 px-3 flex items-center justify-between border-t border-gray-300">
             <button class="outline-none focus:outline-none">
               <svg class="text-gray-400 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -147,6 +148,8 @@
               </svg>
             </button>
           </div>
+          @endisset
+
 
         </div>
       </div>

@@ -19,7 +19,8 @@ use App\Http\Livewire\ShowOrder;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})
+->name('welcome');
 
 /* Route::get('/dashboard', function () {
     return view('components.contacto-amarillo.contacto-dashboard');
@@ -109,7 +110,8 @@ Route::middleware(['auth', 'verified'])
 ->name('employer-editproject');
 
 /* Muestra las subcategorias por enlaces */
-Route::get('/subcategorias', function () {
+Route::middleware(['auth', 'verified'])
+->get('/subcategorias', function () {
     return view('components.employer.categorias.subCategoryEnlaces');
 });
 

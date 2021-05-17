@@ -17,9 +17,9 @@ class Notificaciones extends Component
 {
     public $expert;
     public $employer;
-    public $messages;
+    public $messages=[];
     public $message;
-    public $contacts;
+    public $contacts=[];
     public $employerId;
     public $expertId;
     public $selected;
